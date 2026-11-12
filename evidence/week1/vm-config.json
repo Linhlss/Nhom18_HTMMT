@@ -1,0 +1,21 @@
+{
+  "captured_utc": "2026-11-12T08:26:59.180864+00:00",
+  "vm_name": "Nhom18-W1",
+  "host_os": "macOS 26.7.3",
+  "host_architecture": "arm64",
+  "utm_version": "4.7.4",
+  "architecture": "aarch64",
+  "cpu_count": 4,
+  "memory_mib": 4096,
+  "hypervisor": true,
+  "uefi": true,
+  "virtual_disk_bytes": 34359738368,
+  "network_mode": "Emulated",
+  "ssh_forward": {
+    "GuestPort": 22,
+    "HostAddress": "127.0.0.1",
+    "HostPort": 2222,
+    "Protocol": "TCP"
+  },
+  "cloud_init_seed": "read-only VirtIO disk, datasource /dev/vdb"
+}

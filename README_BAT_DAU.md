@@ -1,5 +1,7 @@
 # NHÓM 18 — BỘ TÀI LIỆU GỐC TRIỂN KHAI 12 TUẦN
 
+**Cập nhật tuần 1:** môi trường và bài thử hai host của TV1 đã có minh chứng. N18-001 ở trạng thái **Chờ kiểm tra** bởi TV4. TV2 xem [hướng dẫn môi trường và bàn giao](docs/env-matrix.md), [log kiểm thử](evidence/week1/README.md) và [README chính](README.md).
+
 ## Bắt đầu từ đâu?
 
 1. **`Nhom18_De_cuong_chi_tiet.pdf`**: đọc nhanh để thống nhất tên đề tài cô đề xuất, bối cảnh, bài toán, input/output, 2 chương báo cáo, giới hạn sản phẩm và tiêu chí nghiệm thu.
@@ -17,6 +19,6 @@ TV1–TV4 là mã tạm vì chưa có tên thành viên. Mỗi người có 12 t
 
 ## Cần lưu ý
 
-- Các dòng tiến độ khởi tạo `Chưa làm`, chưa tuyên bố có mã hay số liệu thực nghiệm đã hoàn thành.
+- N18-001 đã có script và log kiểm thử, đang chờ TV4 review. Các task khác giữ trạng thái theo tracker; chưa có kết quả topology 10 node hoặc thực nghiệm A/B.
 - Nếu sử dụng AI hỗ trợ viết code/script, phải lưu `AI Prompts & Verification Log` theo yêu cầu môn học.
 - Mốc tuần chỉ là tuần 1–12 tính từ khi bắt đầu triển khai; không giả định lịch thực tế của nhóm.

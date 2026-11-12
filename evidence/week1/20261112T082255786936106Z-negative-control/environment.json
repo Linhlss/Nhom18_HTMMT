@@ -1,0 +1,23 @@
+{
+  "captured_utc": "2026-11-12T08:22:55.904118+00:00",
+  "os": {
+    "PRETTY_NAME": "Ubuntu 24.04.5 LTS",
+    "NAME": "Ubuntu",
+    "VERSION_ID": "24.04",
+    "VERSION": "24.04.5 LTS (Noble Numbat)",
+    "VERSION_CODENAME": "noble",
+    "ID": "ubuntu",
+    "ID_LIKE": "debian",
+    "HOME_URL": "https://www.ubuntu.com/",
+    "SUPPORT_URL": "https://help.ubuntu.com/",
+    "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+    "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+    "UBUNTU_CODENAME": "noble",
+    "LOGO": "ubuntu-logo"
+  },
+  "architecture": "aarch64",
+  "kernel": "6.8.0-147-generic",
+  "python": "3.12.3",
+  "cpu_count": 4,
+  "boot_id": "87569009-6bba-43e6-83b4-aad7548b8bf2"
+}

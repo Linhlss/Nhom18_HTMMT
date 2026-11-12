@@ -1,0 +1,33 @@
+status: done
+extended_status: done
+boot_status_code: enabled-by-generator
+last_update: Thu, 01 Jan 1970 00:00:29 +0000
+detail: DataSourceNoCloud [seed=/dev/vdb]
+errors: []
+recoverable_errors: {}
+nhom18-w1
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+6.8.0-147-generic
+active
+active
+NAME           SIZE TYPE MOUNTPOINTS
+sr0          921600 rom  
+vda     34359738368 disk 
+├─vda1  33284931072 part /
+├─vda15   103809536 part /boot/efi
+└─vda16   967836160 part /boot
+vdb          921600 disk 
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vda1        30G  2.0G   28G   7% /

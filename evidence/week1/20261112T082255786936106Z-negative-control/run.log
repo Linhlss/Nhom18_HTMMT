@@ -1,0 +1,55 @@
+Week 1 check: negative-control
+2026-11-12T08:22:55+00:00
+active
+e3a3c654-f5a5-4341-aae2-0a15f681259b
+    ovs_version: "3.3.9"
+2.3.0
+ovs-vsctl (Open vSwitch) 3.3.9
+DB Schema 8.5.1
+Python 3.12.3
+Mininet system-Python import: OK
+iperf3	3.16-1build2	arm64
+iproute2	6.1.0-1ubuntu6.4	arm64
+iputils-ping	3:20240117-1ubuntu0.1	arm64
+mininet	2.3.0-1.1	arm64
+openvswitch-switch	3.3.9-0ubuntu0.24.04.1	arm64
+python3	3.12.3-0ubuntu2.1	arm64
+tcpdump	4.99.4-3ubuntu4.24.04.1	arm64
+*** Configuring hosts
+h1 h2 
+*** Starting controller
+
+*** Starting 1 switches
+s1 ...
+TOPOLOGY {"hosts": ["h1", "h2"], "switches": ["s1"], "links": ["h1-eth0<->s1-eth1", "h2-eth0<->s1-eth2"], "ovs_ports": ["s1-eth1", "s1-eth2"]}
+NEGATIVE CONTROL: h1-s1 is intentionally down.
+*** Ping: testing ping reachability
+h1 -> X 
+h2 -> X 
+*** Results: 100% dropped (0/2 received)
+PING h1 -> h2
+ping: connect: Network is unreachable
+
+PING h2 -> h1
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+From 10.0.0.2 icmp_seq=1 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=2 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=3 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=4 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=5 Destination Host Unreachable
+
+--- 10.0.0.1 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4096ms
+pipe 3
+
+*** Stopping 0 controllers
+
+*** Stopping 2 links
+..
+*** Stopping 1 switches
+s1 
+*** Stopping 2 hosts
+h1 h2 
+*** Done
+RESULT {"started_utc": "2026-11-12T08:22:55.932123+00:00", "negative_control": true, "success": false, "cleanup_ok": true, "pings": [{"source": "h1", "destination": "h2", "exit_code": 2, "parsed": false}, {"source": "h2", "destination": "h1", "exit_code": 1, "parsed": true, "sent": 5, "received": 0, "loss_percent": 100.0}], "hosts": ["h1", "h2"], "switches": ["s1"], "links": ["h1-eth0<->s1-eth1", "h2-eth0<->s1-eth2"], "ovs_ports": ["s1-eth1", "s1-eth2"], "pingall_loss_percent": 100.0, "error": "Connectivity check failed; see the raw ping output.", "remaining_test_interfaces": [], "finished_utc": "2026-11-12T08:23:03.225825+00:00"}
+Evidence: /home/ubuntu/Nhom18_HTMMT/evidence/week1/20261112T082255786936106Z-negative-control (exit 1)

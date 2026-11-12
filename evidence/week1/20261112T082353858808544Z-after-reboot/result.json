@@ -1,0 +1,44 @@
+{
+  "started_utc": "2026-11-12T08:23:53.997245+00:00",
+  "negative_control": false,
+  "success": true,
+  "cleanup_ok": true,
+  "pings": [
+    {
+      "source": "h1",
+      "destination": "h2",
+      "exit_code": 0,
+      "parsed": true,
+      "sent": 5,
+      "received": 5,
+      "loss_percent": 0.0
+    },
+    {
+      "source": "h2",
+      "destination": "h1",
+      "exit_code": 0,
+      "parsed": true,
+      "sent": 5,
+      "received": 5,
+      "loss_percent": 0.0
+    }
+  ],
+  "hosts": [
+    "h1",
+    "h2"
+  ],
+  "switches": [
+    "s1"
+  ],
+  "links": [
+    "h1-eth0<->s1-eth1",
+    "h2-eth0<->s1-eth2"
+  ],
+  "ovs_ports": [
+    "s1-eth1",
+    "s1-eth2"
+  ],
+  "pingall_loss_percent": 0.0,
+  "remaining_test_interfaces": [],
+  "finished_utc": "2026-11-12T08:24:02.374164+00:00"
+}

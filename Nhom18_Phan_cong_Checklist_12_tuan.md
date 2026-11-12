@@ -77,6 +77,7 @@
 ### Tuần 01
 
 - [ ] **N18-001 | TV1 | 2 điểm — Chuẩn hóa kiến trúc VM Ubuntu & tài liệu cài đặt**  
+  - Trạng thái ngày 12/11/2026: **Chờ kiểm tra** bởi TV4; setup và Mininet hai host đã đạt, gồm kiểm thử lại sau reboot. [Minh chứng thực tế](evidence/week1/README.md). Checkbox giữ trống đến khi review được xác nhận.
   - Nghiệm thu: Bảng version OS/Mininet/OVS; xác minh Windows/macOS có phương án VM phù hợp  
   - Phụ thuộc: —  
   - Minh chứng: `docs/env-matrix.md`

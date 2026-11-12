@@ -1,0 +1,7 @@
+iperf3	3.16-1build2	arm64
+iproute2	6.1.0-1ubuntu6.4	arm64
+iputils-ping	3:20240117-1ubuntu0.1	arm64
+mininet	2.3.0-1.1	arm64
+openvswitch-switch	3.3.9-0ubuntu0.24.04.1	arm64
+python3	3.12.3-0ubuntu2.1	arm64
+tcpdump	4.99.4-3ubuntu4.24.04.1	arm64
