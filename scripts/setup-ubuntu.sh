@@ -31,7 +31,7 @@ fi
 echo 'iperf3 iperf3/start_daemon boolean false' | debconf-set-selections
 apt-get install -y --no-install-recommends \
   mininet openvswitch-switch python3 python3-venv python3-pip \
-  iproute2 iputils-ping iperf3 tcpdump net-tools ethtool \
+  iproute2 iputils-ping iperf3 tcpdump net-tools ethtool iptables \
   git curl ca-certificates openssh-server
 
 systemctl enable --now openvswitch-switch.service ssh.service

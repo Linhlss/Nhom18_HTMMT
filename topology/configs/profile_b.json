@@ -1,0 +1,5 @@
+{
+  "id": "B",
+  "description": "Static OpenFlow flow-splitting by client subnet; not ECMP",
+  "client_paths": {"c1": "spine1", "c2": "spine2"}
+}

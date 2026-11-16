@@ -1,0 +1,5 @@
+{
+  "id": "A",
+  "description": "Single-path through spine1 in both directions",
+  "client_paths": {"c1": "spine1", "c2": "spine1"}
+}
