@@ -1,0 +1,20 @@
+{
+  "addresses": {
+    "returncode": 0,
+    "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"127.0.0.1\",\"prefixlen\":8,\"scope\":\"host\",\"label\":\"lo\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295},{\"family\":\"inet6\",\"local\":\"::1\",\"prefixlen\":128,\"scope\":\"host\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":2,\"link_index\":2,\"ifname\":\"c1-eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"htb\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"02:18:00:00:00:01\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"link_netnsid\":0,\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.18.1.10\",\"prefixlen\":24,\"scope\":\"global\",\"label\":\"c1-eth0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n",
+    "stderr": "",
+    "success": true
+  },
+  "routes": {
+    "returncode": 0,
+    "stdout": "[{\"dst\":\"default\",\"gateway\":\"10.18.1.1\",\"dev\":\"c1-eth0\",\"flags\":[]},{\"dst\":\"10.18.1.0/24\",\"dev\":\"c1-eth0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.18.1.10\",\"flags\":[]}]\n",
+    "stderr": "",
+    "success": true
+  },
+  "neighbors": {
+    "returncode": 0,
+    "stdout": "[{\"dst\":\"10.18.1.1\",\"dev\":\"c1-eth0\",\"lladdr\":\"02:18:00:00:00:03\",\"state\":[\"REACHABLE\"]}]\n",
+    "stderr": "",
+    "success": true
+  }
+}

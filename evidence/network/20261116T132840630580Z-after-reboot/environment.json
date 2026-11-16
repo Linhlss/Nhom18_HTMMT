@@ -1,0 +1,13 @@
+{
+  "boot_id": "2a2fd532-0d9a-4069-83bc-ba94de68a743",
+  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+  "uname": "Linux nhom18-w1 6.8.0-149-generic #149-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct 23 13:37:55 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux\n",
+  "packages": "iperf3\t3.16-1build2\tarm64\niptables\t1.8.10-3ubuntu2\tarm64\nmininet\t2.3.0-1.1\tarm64\nopenvswitch-switch\t3.3.9-0ubuntu0.24.04.1\tarm64\npython3\t3.12.3-0ubuntu2.1\tarm64\ntcpdump\t4.99.4-3ubuntu4.24.04.1\tarm64\n",
+  "base_commit": null,
+  "git_status": "",
+  "source_identity": "Use source-manifest.json; .git is optional for an archive deployment",
+  "config_hashes": {
+    "A": "62ac600b80b26ea18bf8c1fd30841e722bd81c7e950d5dc41b6acca841253f8e",
+    "B": "37e5c03a2449a758be7a7dc9a02912820d2337c778a0f55912b5bd5d1087a3e9"
+  }
+}

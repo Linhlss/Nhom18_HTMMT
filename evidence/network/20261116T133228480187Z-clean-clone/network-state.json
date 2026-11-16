@@ -1,0 +1,197 @@
+{
+  "success": true,
+  "session_id": "7a5b54ac6fb8d3d5",
+  "created_utc": "2026-11-16T13:32:28.545487+00:00",
+  "profile": "A",
+  "config_hash": "62ac600b80b26ea18bf8c1fd30841e722bd81c7e950d5dc41b6acca841253f8e",
+  "hosts": [
+    "c1",
+    "c2",
+    "gw",
+    "fw",
+    "a1",
+    "a2"
+  ],
+  "switches": [
+    "leaf1",
+    "leaf2",
+    "spine1",
+    "spine2"
+  ],
+  "endpoints": {
+    "c1": "10.18.1.10",
+    "c2": "10.18.2.10",
+    "a1": "10.18.3.11",
+    "a2": "10.18.3.12"
+  },
+  "addresses": {
+    "c1": [
+      [
+        "c1-eth0",
+        "10.18.1.10/24"
+      ]
+    ],
+    "c2": [
+      [
+        "c2-eth0",
+        "10.18.2.10/24"
+      ]
+    ],
+    "gw": [
+      [
+        "gw-eth0",
+        "10.18.1.1/24"
+      ],
+      [
+        "gw-eth1",
+        "10.18.2.1/24"
+      ],
+      [
+        "gw-eth2",
+        "10.18.254.1/30"
+      ]
+    ],
+    "fw": [
+      [
+        "fw-eth0",
+        "10.18.254.2/30"
+      ],
+      [
+        "fw-eth1",
+        "10.18.3.1/24"
+      ]
+    ],
+    "a1": [
+      [
+        "a1-eth0",
+        "10.18.3.11/24"
+      ]
+    ],
+    "a2": [
+      [
+        "a2-eth0",
+        "10.18.3.12/24"
+      ]
+    ]
+  },
+  "routes": {
+    "c1": [
+      "default via 10.18.1.1"
+    ],
+    "c2": [
+      "default via 10.18.2.1"
+    ],
+    "gw": [
+      "10.18.3.0/24 via 10.18.254.2"
+    ],
+    "fw": [
+      "10.18.1.0/24 via 10.18.254.1",
+      "10.18.2.0/24 via 10.18.254.1"
+    ],
+    "a1": [
+      "default via 10.18.3.1"
+    ],
+    "a2": [
+      "default via 10.18.3.1"
+    ]
+  },
+  "links": [
+    [
+      "c1",
+      "gw",
+      0,
+      0,
+      100,
+      "0ms",
+      100
+    ],
+    [
+      "c2",
+      "gw",
+      0,
+      1,
+      100,
+      "0ms",
+      100
+    ],
+    [
+      "gw",
+      "fw",
+      2,
+      0,
+      100,
+      "0ms",
+      100
+    ],
+    [
+      "fw",
+      "leaf1",
+      1,
+      1,
+      100,
+      "0ms",
+      100
+    ],
+    [
+      "leaf1",
+      "spine1",
+      2,
+      1,
+      25,
+      "1ms",
+      100
+    ],
+    [
+      "leaf1",
+      "spine2",
+      3,
+      1,
+      25,
+      "1ms",
+      100
+    ],
+    [
+      "spine1",
+      "leaf2",
+      2,
+      1,
+      25,
+      "1ms",
+      100
+    ],
+    [
+      "spine2",
+      "leaf2",
+      2,
+      2,
+      25,
+      "1ms",
+      100
+    ],
+    [
+      "leaf2",
+      "a1",
+      3,
+      0,
+      100,
+      "0ms",
+      100
+    ],
+    [
+      "leaf2",
+      "a2",
+      4,
+      0,
+      100,
+      "0ms",
+      100
+    ]
+  ],
+  "ports": {
+    "leaf1": "OFPT_FEATURES_REPLY (OF1.3) (xid=0x2): dpid:0000000000000001\nn_tables:254, n_buffers:0\ncapabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS\nOFPST_PORT_DESC reply (OF1.3) (xid=0x3):\n 1(leaf1-eth1): addr:72:af:bb:3d:ef:38\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n 2(leaf1-eth2): addr:1a:91:c8:91:b3:3a\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n 3(leaf1-eth3): addr:a6:f8:2b:e0:b0:c2\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n LOCAL(leaf1): addr:16:ae:67:c8:ea:48\n     config:     PORT_DOWN\n     state:      LINK_DOWN\n     speed: 0 Mbps now, 0 Mbps max\nOFPT_GET_CONFIG_REPLY (OF1.3) (xid=0x5): frags=normal miss_send_len=0\n",
+    "leaf2": "OFPT_FEATURES_REPLY (OF1.3) (xid=0x2): dpid:0000000000000002\nn_tables:254, n_buffers:0\ncapabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS\nOFPST_PORT_DESC reply (OF1.3) (xid=0x3):\n 1(leaf2-eth1): addr:46:74:52:2b:2c:44\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n 2(leaf2-eth2): addr:ca:dc:bb:64:cf:f2\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n 3(leaf2-eth3): addr:86:9a:06:d5:c0:08\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n 4(leaf2-eth4): addr:f6:c3:e0:3d:7a:3a\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n LOCAL(leaf2): addr:76:53:13:48:41:45\n     config:     PORT_DOWN\n     state:      LINK_DOWN\n     speed: 0 Mbps now, 0 Mbps max\nOFPT_GET_CONFIG_REPLY (OF1.3) (xid=0x5): frags=normal miss_send_len=0\n",
+    "spine1": "OFPT_FEATURES_REPLY (OF1.3) (xid=0x2): dpid:0000000000000003\nn_tables:254, n_buffers:0\ncapabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS\nOFPST_PORT_DESC reply (OF1.3) (xid=0x3):\n 1(spine1-eth1): addr:92:91:33:5f:a8:8a\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n 2(spine1-eth2): addr:8a:f0:2a:88:02:78\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n LOCAL(spine1): addr:c6:76:c0:6c:47:44\n     config:     PORT_DOWN\n     state:      LINK_DOWN\n     speed: 0 Mbps now, 0 Mbps max\nOFPT_GET_CONFIG_REPLY (OF1.3) (xid=0x5): frags=normal miss_send_len=0\n",
+    "spine2": "OFPT_FEATURES_REPLY (OF1.3) (xid=0x2): dpid:0000000000000004\nn_tables:254, n_buffers:0\ncapabilities: FLOW_STATS TABLE_STATS PORT_STATS GROUP_STATS QUEUE_STATS\nOFPST_PORT_DESC reply (OF1.3) (xid=0x3):\n 1(spine2-eth1): addr:8a:5e:3a:5f:86:73\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n 2(spine2-eth2): addr:f2:41:84:eb:ea:8a\n     config:     0\n     state:      LIVE\n     current:    10GB-FD COPPER\n     speed: 10000 Mbps now, 0 Mbps max\n LOCAL(spine2): addr:72:a0:cf:1f:da:44\n     config:     PORT_DOWN\n     state:      LINK_DOWN\n     speed: 0 Mbps now, 0 Mbps max\nOFPT_GET_CONFIG_REPLY (OF1.3) (xid=0x5): frags=normal miss_send_len=0\n"
+  },
+  "active_commands": 0
+}

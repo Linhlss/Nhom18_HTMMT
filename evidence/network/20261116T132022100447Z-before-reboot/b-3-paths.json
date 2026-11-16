@@ -1,0 +1,265 @@
+{
+  "profile": "B",
+  "observed_icmp_packets": {
+    "spine1": {
+      "c1": 46,
+      "c2": 0
+    },
+    "spine2": {
+      "c1": 0,
+      "c2": 46
+    }
+  },
+  "counter_delta": {
+    "spine1": {
+      "rx_bytes": 49680,
+      "tx_bytes": 49680,
+      "rx_packets": 40,
+      "tx_packets": 40
+    },
+    "spine2": {
+      "rx_bytes": 49680,
+      "tx_bytes": 49680,
+      "rx_packets": 40,
+      "tx_packets": 40
+    }
+  },
+  "pings": [
+    {
+      "returncode": 0,
+      "stdout": "PING 10.18.3.11 (10.18.3.11) 1200(1228) bytes of data.\n1208 bytes from 10.18.3.11: icmp_seq=1 ttl=62 time=4.76 ms\n1208 bytes from 10.18.3.11: icmp_seq=2 ttl=62 time=4.50 ms\n1208 bytes from 10.18.3.11: icmp_seq=3 ttl=62 time=4.30 ms\n1208 bytes from 10.18.3.11: icmp_seq=4 ttl=62 time=4.90 ms\n1208 bytes from 10.18.3.11: icmp_seq=5 ttl=62 time=7.21 ms\n1208 bytes from 10.18.3.11: icmp_seq=6 ttl=62 time=4.44 ms\n1208 bytes from 10.18.3.11: icmp_seq=7 ttl=62 time=4.52 ms\n1208 bytes from 10.18.3.11: icmp_seq=8 ttl=62 time=6.11 ms\n1208 bytes from 10.18.3.11: icmp_seq=9 ttl=62 time=4.38 ms\n1208 bytes from 10.18.3.11: icmp_seq=10 ttl=62 time=6.78 ms\n1208 bytes from 10.18.3.11: icmp_seq=11 ttl=62 time=4.40 ms\n1208 bytes from 10.18.3.11: icmp_seq=12 ttl=62 time=4.36 ms\n1208 bytes from 10.18.3.11: icmp_seq=13 ttl=62 time=4.43 ms\n1208 bytes from 10.18.3.11: icmp_seq=14 ttl=62 time=5.59 ms\n1208 bytes from 10.18.3.11: icmp_seq=15 ttl=62 time=4.31 ms\n1208 bytes from 10.18.3.11: icmp_seq=16 ttl=62 time=4.88 ms\n1208 bytes from 10.18.3.11: icmp_seq=17 ttl=62 time=4.29 ms\n1208 bytes from 10.18.3.11: icmp_seq=18 ttl=62 time=4.44 ms\n1208 bytes from 10.18.3.11: icmp_seq=19 ttl=62 time=4.36 ms\n1208 bytes from 10.18.3.11: icmp_seq=20 ttl=62 time=4.42 ms\n1208 bytes from 10.18.3.11: icmp_seq=21 ttl=62 time=4.39 ms\n1208 bytes from 10.18.3.11: icmp_seq=22 ttl=62 time=4.42 ms\n1208 bytes from 10.18.3.11: icmp_seq=23 ttl=62 time=4.30 ms\n1208 bytes from 10.18.3.11: icmp_seq=24 ttl=62 time=6.65 ms\n1208 bytes from 10.18.3.11: icmp_seq=25 ttl=62 time=4.38 ms\n1208 bytes from 10.18.3.11: icmp_seq=26 ttl=62 time=4.40 ms\n1208 bytes from 10.18.3.11: icmp_seq=27 ttl=62 time=5.62 ms\n1208 bytes from 10.18.3.11: icmp_seq=28 ttl=62 time=4.30 ms\n1208 bytes from 10.18.3.11: icmp_seq=29 ttl=62 time=4.44 ms\n1208 bytes from 10.18.3.11: icmp_seq=30 ttl=62 time=4.37 ms\n1208 bytes from 10.18.3.11: icmp_seq=31 ttl=62 time=4.34 ms\n1208 bytes from 10.18.3.11: icmp_seq=32 ttl=62 time=4.91 ms\n1208 bytes from 10.18.3.11: icmp_seq=33 ttl=62 time=4.51 ms\n1208 bytes from 10.18.3.11: icmp_seq=34 ttl=62 time=4.36 ms\n1208 bytes from 10.18.3.11: icmp_seq=35 ttl=62 time=4.57 ms\n1208 bytes from 10.18.3.11: icmp_seq=36 ttl=62 time=4.44 ms\n1208 bytes from 10.18.3.11: icmp_seq=37 ttl=62 time=4.36 ms\n1208 bytes from 10.18.3.11: icmp_seq=38 ttl=62 time=4.22 ms\n1208 bytes from 10.18.3.11: icmp_seq=39 ttl=62 time=4.42 ms\n1208 bytes from 10.18.3.11: icmp_seq=40 ttl=62 time=4.47 ms\n\n--- 10.18.3.11 ping statistics ---\n40 packets transmitted, 40 received, 0% packet loss, time 958ms\nrtt min/avg/max/mdev = 4.224/4.731/7.213/0.726 ms\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "returncode": 0,
+      "stdout": "PING 10.18.3.12 (10.18.3.12) 1200(1228) bytes of data.\n1208 bytes from 10.18.3.12: icmp_seq=1 ttl=62 time=4.79 ms\n1208 bytes from 10.18.3.12: icmp_seq=2 ttl=62 time=4.74 ms\n1208 bytes from 10.18.3.12: icmp_seq=3 ttl=62 time=4.46 ms\n1208 bytes from 10.18.3.12: icmp_seq=4 ttl=62 time=4.49 ms\n1208 bytes from 10.18.3.12: icmp_seq=5 ttl=62 time=4.98 ms\n1208 bytes from 10.18.3.12: icmp_seq=6 ttl=62 time=5.01 ms\n1208 bytes from 10.18.3.12: icmp_seq=7 ttl=62 time=4.47 ms\n1208 bytes from 10.18.3.12: icmp_seq=8 ttl=62 time=4.42 ms\n1208 bytes from 10.18.3.12: icmp_seq=9 ttl=62 time=4.45 ms\n1208 bytes from 10.18.3.12: icmp_seq=10 ttl=62 time=4.27 ms\n1208 bytes from 10.18.3.12: icmp_seq=11 ttl=62 time=5.28 ms\n1208 bytes from 10.18.3.12: icmp_seq=12 ttl=62 time=4.26 ms\n1208 bytes from 10.18.3.12: icmp_seq=13 ttl=62 time=4.52 ms\n1208 bytes from 10.18.3.12: icmp_seq=14 ttl=62 time=5.15 ms\n1208 bytes from 10.18.3.12: icmp_seq=15 ttl=62 time=4.30 ms\n1208 bytes from 10.18.3.12: icmp_seq=16 ttl=62 time=5.00 ms\n1208 bytes from 10.18.3.12: icmp_seq=17 ttl=62 time=4.29 ms\n1208 bytes from 10.18.3.12: icmp_seq=18 ttl=62 time=4.51 ms\n1208 bytes from 10.18.3.12: icmp_seq=19 ttl=62 time=4.30 ms\n1208 bytes from 10.18.3.12: icmp_seq=20 ttl=62 time=4.42 ms\n1208 bytes from 10.18.3.12: icmp_seq=21 ttl=62 time=4.32 ms\n1208 bytes from 10.18.3.12: icmp_seq=22 ttl=62 time=5.51 ms\n1208 bytes from 10.18.3.12: icmp_seq=23 ttl=62 time=4.31 ms\n1208 bytes from 10.18.3.12: icmp_seq=24 ttl=62 time=6.15 ms\n1208 bytes from 10.18.3.12: icmp_seq=25 ttl=62 time=4.43 ms\n1208 bytes from 10.18.3.12: icmp_seq=26 ttl=62 time=4.38 ms\n1208 bytes from 10.18.3.12: icmp_seq=27 ttl=62 time=4.42 ms\n1208 bytes from 10.18.3.12: icmp_seq=28 ttl=62 time=4.26 ms\n1208 bytes from 10.18.3.12: icmp_seq=29 ttl=62 time=4.57 ms\n1208 bytes from 10.18.3.12: icmp_seq=30 ttl=62 time=4.36 ms\n1208 bytes from 10.18.3.12: icmp_seq=31 ttl=62 time=4.39 ms\n1208 bytes from 10.18.3.12: icmp_seq=32 ttl=62 time=4.89 ms\n1208 bytes from 10.18.3.12: icmp_seq=33 ttl=62 time=4.26 ms\n1208 bytes from 10.18.3.12: icmp_seq=34 ttl=62 time=4.71 ms\n1208 bytes from 10.18.3.12: icmp_seq=35 ttl=62 time=6.82 ms\n1208 bytes from 10.18.3.12: icmp_seq=36 ttl=62 time=4.38 ms\n1208 bytes from 10.18.3.12: icmp_seq=37 ttl=62 time=4.97 ms\n1208 bytes from 10.18.3.12: icmp_seq=38 ttl=62 time=4.39 ms\n1208 bytes from 10.18.3.12: icmp_seq=39 ttl=62 time=4.63 ms\n1208 bytes from 10.18.3.12: icmp_seq=40 ttl=62 time=4.65 ms\n\n--- 10.18.3.12 ping statistics ---\n40 packets transmitted, 40 received, 0% packet loss, time 978ms\nrtt min/avg/max/mdev = 4.256/4.672/6.817/0.519 ms\n",
+      "stderr": "",
+      "success": true
+    }
+  ],
+  "before_counters": {
+    "leaf1-eth1": {
+      "rx_bytes": 522412,
+      "rx_packets": 664,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 522712,
+      "tx_packets": 668,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "spine1-eth1": {
+      "rx_bytes": 418648,
+      "rx_packets": 540,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 418648,
+      "tx_packets": 540,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf1-eth2": {
+      "rx_bytes": 418648,
+      "rx_packets": 540,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 418648,
+      "tx_packets": 540,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "spine2-eth1": {
+      "rx_bytes": 104720,
+      "rx_packets": 136,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 104720,
+      "tx_packets": 136,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf1-eth3": {
+      "rx_bytes": 104720,
+      "rx_packets": 136,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 104720,
+      "tx_packets": 136,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf2-eth1": {
+      "rx_bytes": 418648,
+      "rx_packets": 540,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 418648,
+      "tx_packets": 540,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "spine1-eth2": {
+      "rx_bytes": 418648,
+      "rx_packets": 540,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 418648,
+      "tx_packets": 540,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf2-eth2": {
+      "rx_bytes": 104720,
+      "rx_packets": 136,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 104720,
+      "tx_packets": 136,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "spine2-eth2": {
+      "rx_bytes": 104720,
+      "rx_packets": 136,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 104720,
+      "tx_packets": 136,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf2-eth3": {
+      "rx_bytes": 261518,
+      "rx_packets": 335,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 261942,
+      "tx_packets": 343,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf2-eth4": {
+      "rx_bytes": 261514,
+      "rx_packets": 335,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 261942,
+      "tx_packets": 343,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    }
+  },
+  "after_counters": {
+    "leaf1-eth1": {
+      "rx_bytes": 621772,
+      "rx_packets": 744,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 622072,
+      "tx_packets": 748,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "spine1-eth1": {
+      "rx_bytes": 468328,
+      "rx_packets": 580,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 468328,
+      "tx_packets": 580,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf1-eth2": {
+      "rx_bytes": 468328,
+      "rx_packets": 580,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 468328,
+      "tx_packets": 580,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "spine2-eth1": {
+      "rx_bytes": 154400,
+      "rx_packets": 176,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 154400,
+      "tx_packets": 176,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf1-eth3": {
+      "rx_bytes": 154400,
+      "rx_packets": 176,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 154400,
+      "tx_packets": 176,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf2-eth1": {
+      "rx_bytes": 468328,
+      "rx_packets": 580,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 468328,
+      "tx_packets": 580,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "spine1-eth2": {
+      "rx_bytes": 468328,
+      "rx_packets": 580,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 468328,
+      "tx_packets": 580,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf2-eth2": {
+      "rx_bytes": 154400,
+      "rx_packets": 176,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 154400,
+      "tx_packets": 176,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "spine2-eth2": {
+      "rx_bytes": 154400,
+      "rx_packets": 176,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 154400,
+      "tx_packets": 176,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf2-eth3": {
+      "rx_bytes": 311198,
+      "rx_packets": 375,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 311622,
+      "tx_packets": 383,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    },
+    "leaf2-eth4": {
+      "rx_bytes": 311194,
+      "rx_packets": 375,
+      "rx_errors": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 311622,
+      "tx_packets": 383,
+      "tx_errors": 0,
+      "tx_dropped": 0
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "started_utc": "2026-11-16T13:21:59.033262+00:00",
+  "success": false,
+  "label": "before-reboot",
+  "quick": false,
+  "error": "['/usr/bin/python3', '/home/ubuntu/Nhom18_HTMMT/control/networkctl.py', 'start', '--profile', 'A']: 1:  {\"success\": false, \"error\": \"A runtime socket already exists; inspect status before starting\"}\n",
+  "cleanup_error": "[Errno 104] Connection reset by peer",
+  "cases": [
+    {
+      "name": "initial-zero-loss-and-exact-rules",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "exec-preserves-failure-exit-code",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "all-20-interface-shapers-have-declared-rates",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-a-1",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 46,
+          "c2": 46
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 0
+        }
+      }
+    },
+    {
+      "name": "apply-B",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-b-1",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 42,
+          "c2": 0
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 44
+        }
+      }
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-a-2",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 43,
+          "c2": 44
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 0
+        }
+      }
+    },
+    {
+      "name": "apply-B",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-b-2",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 40,
+          "c2": 0
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 40
+        }
+      }
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-a-3",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 44,
+          "c2": 46
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 0
+        }
+      }
+    },
+    {
+      "name": "apply-B",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-b-3",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 44,
+          "c2": 0
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 44
+        }
+      }
+    },
+    {
+      "name": "probe-listens-on-allowed-and-blocked-ports",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "apply-refuses-running-workload",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "probe-server-exits",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "firewall-allows-8000-blocks-listening-9000",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "iperf-A",
+      "success": true,
+      "details": 23.880582206101426
+    },
+    {
+      "name": "apply-B",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "iperf-B",
+      "success": true,
+      "details": 47.80593317319833
+    },
+    {
+      "name": "edge-supports-dual-path-load",
+      "success": true,
+      "details": 47.80593317319833
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "ignore-unconfirmed-invalid-do-not-change-flows",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "broken-spine2-apply-fails-and-restores-a",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "restored-network-verifies",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "cleanup-removes-owned-resources",
+      "success": true,
+      "details": null
+    }
+  ],
+  "finished_utc": "2026-11-16T13:23:14.952142+00:00"
+}

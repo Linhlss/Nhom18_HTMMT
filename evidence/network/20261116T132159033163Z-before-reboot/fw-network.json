@@ -1,0 +1,20 @@
+{
+  "addresses": {
+    "returncode": 0,
+    "stdout": "[{\"ifindex\":1,\"ifname\":\"lo\",\"flags\":[\"LOOPBACK\",\"UP\",\"LOWER_UP\"],\"mtu\":65536,\"qdisc\":\"noqueue\",\"operstate\":\"UNKNOWN\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"loopback\",\"address\":\"00:00:00:00:00:00\",\"broadcast\":\"00:00:00:00:00:00\",\"addr_info\":[{\"family\":\"inet\",\"local\":\"127.0.0.1\",\"prefixlen\":8,\"scope\":\"host\",\"label\":\"lo\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295},{\"family\":\"inet6\",\"local\":\"::1\",\"prefixlen\":128,\"scope\":\"host\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":2,\"link_index\":4,\"ifname\":\"fw-eth0\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"htb\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"02:18:00:00:00:04\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"link_netnsid\":0,\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.18.254.2\",\"prefixlen\":30,\"scope\":\"global\",\"label\":\"fw-eth0\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]},{\"ifindex\":3,\"link_index\":91,\"ifname\":\"fw-eth1\",\"flags\":[\"BROADCAST\",\"MULTICAST\",\"UP\",\"LOWER_UP\"],\"mtu\":1500,\"qdisc\":\"htb\",\"operstate\":\"UP\",\"group\":\"default\",\"txqlen\":1000,\"link_type\":\"ether\",\"address\":\"fe:c4:4d:bb:6d:c1\",\"broadcast\":\"ff:ff:ff:ff:ff:ff\",\"link_netnsid\":1,\"addr_info\":[{\"family\":\"inet\",\"local\":\"10.18.3.1\",\"prefixlen\":24,\"scope\":\"global\",\"label\":\"fw-eth1\",\"valid_life_time\":4294967295,\"preferred_life_time\":4294967295}]}]\n",
+    "stderr": "",
+    "success": true
+  },
+  "routes": {
+    "returncode": 0,
+    "stdout": "[{\"dst\":\"10.18.1.0/24\",\"gateway\":\"10.18.254.1\",\"dev\":\"fw-eth0\",\"flags\":[]},{\"dst\":\"10.18.2.0/24\",\"gateway\":\"10.18.254.1\",\"dev\":\"fw-eth0\",\"flags\":[]},{\"dst\":\"10.18.3.0/24\",\"dev\":\"fw-eth1\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.18.3.1\",\"flags\":[]},{\"dst\":\"10.18.254.0/30\",\"dev\":\"fw-eth0\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.18.254.2\",\"flags\":[]}]\n",
+    "stderr": "",
+    "success": true
+  },
+  "neighbors": {
+    "returncode": 0,
+    "stdout": "[{\"dst\":\"10.18.3.11\",\"dev\":\"fw-eth1\",\"lladdr\":\"02:18:00:00:00:05\",\"state\":[\"REACHABLE\"]},{\"dst\":\"10.18.254.1\",\"dev\":\"fw-eth0\",\"lladdr\":\"aa:dd:1f:8f:35:b1\",\"state\":[\"DELAY\"]},{\"dst\":\"10.18.3.12\",\"dev\":\"fw-eth1\",\"lladdr\":\"02:18:00:00:00:06\",\"state\":[\"REACHABLE\"]}]\n",
+    "stderr": "",
+    "success": true
+  }
+}

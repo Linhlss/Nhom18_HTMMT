@@ -76,8 +76,8 @@
 
 ### Tuần 01
 
-- [ ] **N18-001 | TV1 | 2 điểm — Chuẩn hóa kiến trúc VM Ubuntu & tài liệu cài đặt**  
-  - Trạng thái ngày 12/11/2026: **Chờ kiểm tra** bởi TV4; setup và Mininet hai host đã đạt, gồm kiểm thử lại sau reboot. [Minh chứng thực tế](evidence/week1/README.md). Checkbox giữ trống đến khi review được xác nhận.
+- [x] **N18-001 | TV1 | 2 điểm — Chuẩn hóa kiến trúc VM Ubuntu & tài liệu cài đặt**
+  - Trạng thái ghi nhận ngày 16/11/2026: **Hoàn thành**. Người dùng xác nhận TV4 đã nghiệm thu; [minh chứng tuần 1](evidence/week1/README.md) giữ nguyên log gốc.
   - Nghiệm thu: Bảng version OS/Mininet/OVS; xác minh Windows/macOS có phương án VM phù hợp  
   - Phụ thuộc: —  
   - Minh chứng: `docs/env-matrix.md`
@@ -97,6 +97,7 @@
 ### Tuần 02
 
 - [ ] **N18-005 | TV1 | 4 điểm — Dựng Mininet topology sơ bộ 2×2 và host**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Mạng tạo/xóa ổn định; `nodes`,`net`,`links` ghi log  
   - Phụ thuộc: N18-001  
   - Minh chứng: `topology/topology.py; evidence/w2_network.txt`
@@ -116,6 +117,7 @@
 ### Tuần 03
 
 - [ ] **N18-009 | TV1 | 4 điểm — Hoàn thiện routing/gateway/firewall và kiểm tra đường đi**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Client↔server thông; không loop; gateway/firewall không bottleneck ở tải chính  
   - Phụ thuộc: N18-005  
   - Minh chứng: `topology/configs/; evidence/w3_routes.txt`
@@ -135,6 +137,7 @@
 ### Tuần 04
 
 - [ ] **N18-013 | TV1 | 5 điểm — Khóa profile A single-path có thể tái lập**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Traffic đi đúng spine đã định; xuất cấu hình đường đi có version  
   - Phụ thuộc: N18-009  
   - Minh chứng: `topology/configs/profile_a.yaml`
@@ -154,6 +157,7 @@
 ### Tuần 05
 
 - [ ] **N18-017 | TV1 | 5 điểm — Dựng profile B hai đường có kiểm chứng**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Chứng minh flow đi qua 2 spine; ghi đúng flow-splitting hay ECMP theo cơ chế thực tế  
   - Phụ thuộc: N18-013  
   - Minh chứng: `topology/configs/profile_b.yaml; evidence/w5_paths.txt`
@@ -173,6 +177,7 @@
 ### Tuần 06
 
 - [ ] **N18-021 | TV1 | 5 điểm — API/script chuyển profile A↔B an toàn**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Cấu hình idempotent; log trước/sau; kiểm tra đường đi sau khi chuyển  
   - Phụ thuộc: N18-017  
   - Minh chứng: `control/apply_profile.py`
@@ -192,6 +197,7 @@
 ### Tuần 07
 
 - [ ] **N18-025 | TV1 | 5 điểm — Rào chắn Apply/Ignore và xử lý lỗi áp dụng**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Không có thay đổi khi Ignore; Apply chỉ profile hợp lệ và log đầy đủ  
   - Phụ thuộc: N18-021  
   - Minh chứng: `control/approval.py; tests/test_apply.py`
@@ -211,6 +217,7 @@
 ### Tuần 08
 
 - [ ] **N18-029 | TV1 | 5 điểm — Apply profile B thực lên OVS khi xác nhận**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Nhấn Apply tác động đúng flow/routing testbed; counter/path đổi; có log  
   - Phụ thuộc: N18-025  
   - Minh chứng: `control/; evidence/w8_apply.txt`
@@ -230,6 +237,7 @@
 ### Tuần 09
 
 - [ ] **N18-033 | TV1 | 5 điểm — Hoàn thiện kiểm chứng A/B và xử lý bất nhất đường đi**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Có bằng chứng counter/path cho từng profile; fix loop/routing mismatch  
   - Phụ thuộc: N18-029  
   - Minh chứng: `evidence/w9_pathcheck.txt`
@@ -249,6 +257,7 @@
 ### Tuần 10
 
 - [ ] **N18-037 | TV1 | 4 điểm — Ổn định topology/config và kiểm tra bottleneck biên**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Chờ kiểm tra** bởi TV4; mã triển khai và kiểm thử VM có tại [gói hạ tầng](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md).
   - Nghiệm thu: Gateway/firewall không nghẽn ngoài ý muốn; chốt version cấu hình  
   - Phụ thuộc: N18-033  
   - Minh chứng: `topology/; evidence/w10_linkcheck.txt`
@@ -268,6 +277,7 @@
 ### Tuần 11
 
 - [ ] **N18-041 | TV1 | 4 điểm — Script setup sạch và hướng dẫn mạng/routing**  
+  - Trạng thái bàn giao ngày 16/11/2026: **Đang làm**. Script setup/chạy lại và clone sạch được kiểm chứng trên VM TV1; còn cần xác minh trên một Ubuntu OS mới để đủ tiêu chí cài sạch.
   - Nghiệm thu: Cài mới trên VM chuẩn có checklist chạy; không cần thao tác thủ công mơ hồ  
   - Phụ thuộc: N18-037  
   - Minh chứng: `setup/; README.md`

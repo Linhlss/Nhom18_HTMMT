@@ -1,0 +1,50 @@
+{
+  "started_utc": "2026-11-16T13:32:28.480319+00:00",
+  "success": true,
+  "label": "clean-clone",
+  "quick": true,
+  "session_id": "7a5b54ac6fb8d3d5",
+  "cases": [
+    {
+      "name": "initial-zero-loss-and-exact-rules",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "exec-preserves-failure-exit-code",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "all-20-interface-shapers-have-declared-rates",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "cleanup-removes-owned-resources",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "lifecycle-1",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "lifecycle-cleanup-1",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "lifecycle-2",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "lifecycle-cleanup-2",
+      "success": true,
+      "details": null
+    }
+  ],
+  "finished_utc": "2026-11-16T13:32:43.672703+00:00"
+}

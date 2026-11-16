@@ -1,0 +1,36 @@
+{
+  "code_commit": "084189b5d27eeec5fdb2fa6edb13a634316b7c5c",
+  "passing_runs": [
+    {
+      "directory": "evidence/network/20261116T132432534717Z-before-reboot-final",
+      "checks": 33,
+      "quick": false,
+      "boot_id": "53bdbe50-4b5f-4c9f-b382-1b399ba34d9c",
+      "base_commit": null,
+      "source_matches_code_commit": true
+    },
+    {
+      "directory": "evidence/network/20261116T132840630580Z-after-reboot",
+      "checks": 33,
+      "quick": false,
+      "boot_id": "2a2fd532-0d9a-4069-83bc-ba94de68a743",
+      "base_commit": null,
+      "source_matches_code_commit": true
+    },
+    {
+      "directory": "evidence/network/20261116T133228480187Z-clean-clone",
+      "checks": 8,
+      "quick": true,
+      "boot_id": "2a2fd532-0d9a-4069-83bc-ba94de68a743",
+      "base_commit": "084189b5d27eeec5fdb2fa6edb13a634316b7c5c",
+      "source_matches_code_commit": true
+    }
+  ],
+  "unit_tests_passed": 10,
+  "latex_folder_included": false,
+  "limitations": [
+    "No clean Ubuntu OS installation test yet",
+    "No test on another member computer yet",
+    "iperf3 diagnostics are not AI inference benchmark results"
+  ]
+}

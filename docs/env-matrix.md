@@ -1,7 +1,7 @@
 # Môi trường tuần 1 và bàn giao TV2
 
 **Task:** N18-001 — TV1. **Người review:** TV4.  
-Tài liệu này chuẩn hóa môi trường và bài thử khởi động hai host. Topology Spine–Leaf 10 node thuộc các tuần sau.
+**Nghiệm thu:** Hoàn thành theo xác nhận của người dùng về review TV4 ngày 16/11/2026. Tài liệu này giữ hướng dẫn môi trường và bài thử khởi động hai host. Hạ tầng 10 node và CLI tích hợp nằm trong [bàn giao mạng cho TV2](network-handoff.md).
 
 ## 1. Ma trận môi trường
 
@@ -104,6 +104,6 @@ Sau khi khởi động lại VM, chạy lại verify với nhãn `after-reboot`.
 
 TV2 nhận link repo, tài liệu này, script thiết lập/kiểm thử và các log tuần 1. TV2 tự dựng VM đúng kiến trúc, chạy verify, rồi làm **N18-002**: đặc tả `request_size`, `response_size`, `request_rate`, `concurrency`, `service_delay`, đơn vị và ví dụ cấu hình. Ví dụ đặc tả không được trình bày như dữ liệu đo thực tế. Phần workload/client/server vẫn thuộc TV2.
 
-TV4 kiểm tra các phiên bản, đọc log, chạy lại verify và xác nhận nghiệm thu N18-001. Trạng thái sau khi kiểm thử kỹ thuật đạt là **Chờ kiểm tra**. Chỉ cập nhật **Hoàn thành** và đánh dấu checkbox sau review thật. G1 còn cần đầu ra workload/metrics/scope của TV2–TV4; bài thử hai host không thay thế các đầu ra đó.
+TV4 đã nghiệm thu N18-001 theo xác nhận của người dùng ngày 16/11/2026; task được cập nhật **Hoàn thành**. Với các task mạng mới, kiểm thử kỹ thuật đạt được ghi **Chờ kiểm tra**, giữ TV4 là reviewer. G1 còn cần đầu ra workload/metrics/scope của TV2–TV4; bài thử hai host không thay thế các đầu ra đó.
 
 Kết quả và các giới hạn kiểm chứng của lần bàn giao được tổng hợp trong [evidence tuần 1](../evidence/week1/README.md).

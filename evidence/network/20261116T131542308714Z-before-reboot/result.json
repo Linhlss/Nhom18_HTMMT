@@ -1,0 +1,9 @@
+{
+  "started_utc": "2026-11-16T13:15:42.308841+00:00",
+  "success": false,
+  "label": "before-reboot",
+  "quick": false,
+  "error": "['git', '-C', '/home/ubuntu/Nhom18_HTMMT', 'rev-parse', 'HEAD']: 128: fatal: not a git repository (or any of the parent directories): .git\n ",
+  "cases": [],
+  "finished_utc": "2026-11-16T13:15:42.321838+00:00"
+}

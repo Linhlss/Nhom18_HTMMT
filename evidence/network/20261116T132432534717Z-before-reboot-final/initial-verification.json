@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "profile": "A",
+  "rules_ok": true,
+  "inventory_ok": true,
+  "pings": [
+    {
+      "source": "c1",
+      "destination": "a1",
+      "returncode": 0,
+      "stdout": "PING 10.18.3.11 (10.18.3.11) 56(84) bytes of data.\n64 bytes from 10.18.3.11: icmp_seq=1 ttl=62 time=4.28 ms\n64 bytes from 10.18.3.11: icmp_seq=2 ttl=62 time=4.13 ms\n64 bytes from 10.18.3.11: icmp_seq=3 ttl=62 time=4.35 ms\n\n--- 10.18.3.11 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 203ms\nrtt min/avg/max/mdev = 4.125/4.250/4.349/0.093 ms\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "source": "a1",
+      "destination": "c1",
+      "returncode": 0,
+      "stdout": "PING 10.18.1.10 (10.18.1.10) 56(84) bytes of data.\n64 bytes from 10.18.1.10: icmp_seq=1 ttl=62 time=4.53 ms\n64 bytes from 10.18.1.10: icmp_seq=2 ttl=62 time=4.22 ms\n64 bytes from 10.18.1.10: icmp_seq=3 ttl=62 time=4.37 ms\n\n--- 10.18.1.10 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 218ms\nrtt min/avg/max/mdev = 4.220/4.374/4.531/0.126 ms\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "source": "c1",
+      "destination": "a2",
+      "returncode": 0,
+      "stdout": "PING 10.18.3.12 (10.18.3.12) 56(84) bytes of data.\n64 bytes from 10.18.3.12: icmp_seq=1 ttl=62 time=4.39 ms\n64 bytes from 10.18.3.12: icmp_seq=2 ttl=62 time=4.37 ms\n64 bytes from 10.18.3.12: icmp_seq=3 ttl=62 time=5.53 ms\n\n--- 10.18.3.12 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 210ms\nrtt min/avg/max/mdev = 4.372/4.762/5.530/0.542 ms\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "source": "a2",
+      "destination": "c1",
+      "returncode": 0,
+      "stdout": "PING 10.18.1.10 (10.18.1.10) 56(84) bytes of data.\n64 bytes from 10.18.1.10: icmp_seq=1 ttl=62 time=4.74 ms\n64 bytes from 10.18.1.10: icmp_seq=2 ttl=62 time=4.30 ms\n64 bytes from 10.18.1.10: icmp_seq=3 ttl=62 time=4.82 ms\n\n--- 10.18.1.10 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 213ms\nrtt min/avg/max/mdev = 4.298/4.620/4.818/0.229 ms\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "source": "c2",
+      "destination": "a1",
+      "returncode": 0,
+      "stdout": "PING 10.18.3.11 (10.18.3.11) 56(84) bytes of data.\n64 bytes from 10.18.3.11: icmp_seq=1 ttl=62 time=4.40 ms\n64 bytes from 10.18.3.11: icmp_seq=2 ttl=62 time=4.58 ms\n64 bytes from 10.18.3.11: icmp_seq=3 ttl=62 time=6.49 ms\n\n--- 10.18.3.11 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 209ms\nrtt min/avg/max/mdev = 4.399/5.156/6.490/0.945 ms\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "source": "a1",
+      "destination": "c2",
+      "returncode": 0,
+      "stdout": "PING 10.18.2.10 (10.18.2.10) 56(84) bytes of data.\n64 bytes from 10.18.2.10: icmp_seq=1 ttl=62 time=4.36 ms\n64 bytes from 10.18.2.10: icmp_seq=2 ttl=62 time=5.75 ms\n64 bytes from 10.18.2.10: icmp_seq=3 ttl=62 time=4.42 ms\n\n--- 10.18.2.10 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 213ms\nrtt min/avg/max/mdev = 4.356/4.841/5.747/0.641 ms\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "source": "c2",
+      "destination": "a2",
+      "returncode": 0,
+      "stdout": "PING 10.18.3.12 (10.18.3.12) 56(84) bytes of data.\n64 bytes from 10.18.3.12: icmp_seq=1 ttl=62 time=4.45 ms\n64 bytes from 10.18.3.12: icmp_seq=2 ttl=62 time=4.30 ms\n64 bytes from 10.18.3.12: icmp_seq=3 ttl=62 time=4.41 ms\n\n--- 10.18.3.12 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 214ms\nrtt min/avg/max/mdev = 4.298/4.386/4.448/0.064 ms\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "source": "a2",
+      "destination": "c2",
+      "returncode": 0,
+      "stdout": "PING 10.18.2.10 (10.18.2.10) 56(84) bytes of data.\n64 bytes from 10.18.2.10: icmp_seq=1 ttl=62 time=4.50 ms\n64 bytes from 10.18.2.10: icmp_seq=2 ttl=62 time=4.43 ms\n64 bytes from 10.18.2.10: icmp_seq=3 ttl=62 time=5.06 ms\n\n--- 10.18.2.10 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 209ms\nrtt min/avg/max/mdev = 4.430/4.665/5.064/0.283 ms\n",
+      "stderr": "",
+      "success": true
+    }
+  ],
+  "flows": {
+    "leaf1": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=3.896s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=2,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=3.896s, table=0, n_packets=32, n_bytes=3136, priority=100,ip,in_port=1,nw_src=10.18.1.0/24,nw_dst=10.18.3.0/24 actions=output:2\n cookie=0x1818, duration=3.896s, table=0, n_packets=27, n_bytes=2646, priority=100,ip,in_port=1,nw_src=10.18.2.0/24,nw_dst=10.18.3.0/24 actions=output:2\n cookie=0x1818, duration=3.896s, table=0, n_packets=32, n_bytes=3136, priority=100,ip,in_port=2,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=3.896s, table=0, n_packets=27, n_bytes=2646, priority=100,ip,in_port=2,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=3.896s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=1 actions=output:2\n cookie=0x1818, duration=3.896s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=2 actions=output:1\n cookie=0x1818, duration=3.896s, table=0, n_packets=8, n_bytes=676, priority=0 actions=drop\n",
+    "leaf2": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=3.895s, table=0, n_packets=32, n_bytes=3136, priority=110,ip,in_port=1,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=3.895s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=2,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=3.894s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=4,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=3.894s, table=0, n_packets=27, n_bytes=2646, priority=110,ip,in_port=1,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=3.894s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=2,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=3.894s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=3,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=3.894s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=3,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=3.894s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=4,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=3.893s, table=0, n_packets=16, n_bytes=1568, priority=100,ip,in_port=3,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=3.893s, table=0, n_packets=16, n_bytes=1568, priority=100,ip,in_port=4,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=3.893s, table=0, n_packets=16, n_bytes=1568, priority=100,ip,in_port=3,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=3.893s, table=0, n_packets=11, n_bytes=1078, priority=100,ip,in_port=4,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=3.893s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=1 actions=output:3,output:4\n cookie=0x1818, duration=3.893s, table=0, n_packets=1, n_bytes=42, priority=100,arp,in_port=3 actions=output:1,output:4\n cookie=0x1818, duration=3.893s, table=0, n_packets=1, n_bytes=42, priority=100,arp,in_port=4 actions=output:1,output:3\n cookie=0x1818, duration=3.893s, table=0, n_packets=11, n_bytes=946, priority=0 actions=drop\n",
+    "spine1": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=3.888s, table=0, n_packets=59, n_bytes=5782, priority=100,ip,in_port=1 actions=output:2\n cookie=0x1818, duration=3.888s, table=0, n_packets=59, n_bytes=5782, priority=100,ip,in_port=2 actions=output:1\n cookie=0x1818, duration=3.887s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=1 actions=output:2\n cookie=0x1818, duration=3.887s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=2 actions=output:1\n cookie=0x1818, duration=3.887s, table=0, n_packets=9, n_bytes=762, priority=0 actions=drop\n",
+    "spine2": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=3.882s, table=0, n_packets=0, n_bytes=0, priority=100,ip,in_port=1 actions=output:2\n cookie=0x1818, duration=3.882s, table=0, n_packets=0, n_bytes=0, priority=100,ip,in_port=2 actions=output:1\n cookie=0x1818, duration=3.882s, table=0, n_packets=8, n_bytes=676, priority=0 actions=drop\n"
+  }
+}

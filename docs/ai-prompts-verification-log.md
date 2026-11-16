@@ -38,3 +38,41 @@ Không khẳng định riêng nguyên nhân kernel/USB của lỗi seed khi chư
 - Tracker được cập nhật bằng công cụ spreadsheet và kiểm tra lại sau export: chỉ ba ô K2/L2/N2 của sheet Công việc đổi; công thức, giá trị các task khác, định dạng, validation và conditional formatting được giữ nguyên. Đã xem ảnh render hàng cập nhật và Tổng quan; không thấy lỗi công thức.
 
 Xem [evidence tuần 1](../evidence/week1/README.md) và [checksum mã đã chạy](../evidence/week1/scripts.sha256). Review chéo của TV4 và việc tái lập trên Windows/Mac Intel chưa được thực hiện trong phiên này. Các số RTT trong raw log chỉ mô tả bài thử VM, chưa được dùng làm kết quả nghiên cứu A/B.
+
+## Bổ sung ngày 16/11/2026 — hoàn thiện hạ tầng TV1
+
+### Yêu cầu và quyết định
+
+- Người dùng yêu cầu hoàn thiện topology/routing/firewall, profile A/B và Apply để bàn giao cho TV2, commit/push lên repo. Người dùng xác nhận TV4 đã nghiệm thu N18-001.
+- Kế hoạch được người dùng yêu cầu triển khai: 10 node; A single-path; B phân luồng tĩnh theo client subnet; operator Confirm/Ignore; verify, rollback khi thao tác thất bại; kiểm thử trước/sau reboot và clone sạch.
+- Người dùng chọn chỉ đưa hạ tầng và gói bàn giao lên repo, giữ bộ báo cáo LaTeX/PDF trên máy.
+- Không làm thay workload, dashboard hoặc detection/analysis của TV2–TV3; fixture TCP và iperf3 chỉ phục vụ kiểm thử mạng.
+
+Các dòng trên tóm tắt yêu cầu và quyết định trong phiên, không phải bản chép mọi trao đổi nội bộ.
+
+### Lỗi gặp và cách kiểm chứng bản sửa
+
+| Quan sát thực tế | Bản sửa | Kiểm chứng |
+|---|---|---|
+| `ovs-ofctl barrier` không phải subcommand của bản cài đặt | Bỏ lời gọi không hợp lệ; soát flow dump sau `replace-flows` | Runtime khởi động và bộ soát rule đạt |
+| Mã chép vào VM bằng archive không có `.git`, metadata làm bộ test dừng | Cho phép metadata Git trống; SHA256 source manifest luôn bắt buộc | Bản archive chạy đủ bộ; clone sạch có commit thực |
+| `tc` không thấy `c1-eth0` ở root namespace | Đọc interface host qua namespace của host | Cả 20 interface đều được kiểm tra rate thực tế |
+| Counter OVSDB bằng 0 trong probe ngắn dù capture có packet | Dùng counter kernel trực tiếp trên interface/OVS port tương ứng | PCAP + delta RX/TX đồng nhất ở ba lượt A/B |
+| Chương trình TCP timeout in stderr nhưng returncode bị trả 0 | Không dùng detach kép: Python tạo session, Mininet dùng `mnexec -a` | Lệnh `exit 7` trả 7; TCP/9000 bị chặn trả thất bại; bộ test không chấp nhận false success |
+| Lặp stop/start gặp socket cũ chưa kịp giải phóng | `stop` chờ socket và owner lock được giải phóng trước khi trả | Hai vòng start/verify/stop bổ sung đều đạt ở cả hai boot |
+| So sánh font bằng StyleProxy báo khác dù hình và thuộc tính giống | So sánh bản sao đối tượng style thay vì proxy | Không có thay đổi font/fill/alignment/border/protection ngoài phạm vi |
+
+Log các lần test thất bại được giữ nguyên trong [evidence mạng](../evidence/network/README.md); không đổi cờ thất bại thành PASS. HTB có cảnh báo quantum trong runtime log; bộ test vẫn yêu cầu lệnh thành công, class rate đúng và số liệu chẩn đoán thực, không bỏ qua lỗi bằng cách lọc stderr.
+
+### Kết quả xác minh
+
+- 10 unit tests cho topology, hướng chuyển tiếp, ARP không vòng lặp, soát rule/counter, xác nhận/Ignore, idempotency và rollback.
+- Bộ đầy đủ trước reboot: 33 checks PASS; sau reboot: 33 checks PASS, boot ID khác nhau, checksum nguồn của hai lượt khớp code commit `084189b5d27eeec5fdb2fa6edb13a634316b7c5c`.
+- Clone sạch từ Git bundle của cùng commit trong thư mục mới: setup chạy lại thành công, 10 unit tests và 8 kiểm tra quick PASS; source manifest của cả ba lượt đạt được so trực tiếp với Git blob trong commit.
+- Ping verify hai chiều 3/3, probe từng đường 40/40; ba lượt kiểm chứng mỗi profile bằng capture và counter.
+- Firewall được kiểm tra với server thực sự mở cả cổng cho phép và cổng chặn. Ngắt đường Spine 2 làm Apply B thất bại và khôi phục A được xác minh lại.
+- Các phép đo iperf3 8 kết nối cho kết quả được giữ trong raw JSON, không được trình bày như benchmark workload AI inference.
+- Tracker được author bằng Artifact Tool: 40 ô trạng thái/link/ghi chú thay đổi; mọi giá trị/công thức khác và style giữ nguyên, không mất ZIP part, số conditional-format/validation/extLst giữ nguyên. Đã recalculate, quét lỗi công thức và xem ảnh render vùng thay đổi/Tổng quan.
+- N18-001 hoàn thành theo xác nhận người dùng; các task mạng mới chờ TV4 review. Chưa xác minh cài mới Ubuntu trên OS sạch hoặc chạy trên máy thành viên khác; N18-041/N18-045 không được báo hoàn thành.
+
+Hướng dẫn tích hợp và phạm vi: [bàn giao TV2](network-handoff.md). Commit chứa mã hạ tầng: `084189b5d27eeec5fdb2fa6edb13a634316b7c5c`; commit bổ sung tài liệu/minh chứng được lưu trong lịch sử Git khi xuất bản.

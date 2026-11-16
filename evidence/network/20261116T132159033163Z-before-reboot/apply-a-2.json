@@ -1,0 +1,98 @@
+{
+  "timestamp_utc": "2026-11-16T13:22:10.877148+00:00",
+  "session_id": "19bc8583f0b0a8e1",
+  "actor": "acceptance-test",
+  "decision": "apply",
+  "confirmed": true,
+  "old_profile": "B",
+  "requested_profile": "A",
+  "old_config_hash": "37e5c03a2449a758be7a7dc9a02912820d2337c778a0f55912b5bd5d1087a3e9",
+  "requested_config_hash": "62ac600b80b26ea18bf8c1fd30841e722bd81c7e950d5dc41b6acca841253f8e",
+  "success": true,
+  "verification": {
+    "success": true,
+    "profile": "A",
+    "rules_ok": true,
+    "inventory_ok": true,
+    "pings": [
+      {
+        "source": "c1",
+        "destination": "a1",
+        "returncode": 0,
+        "stdout": "PING 10.18.3.11 (10.18.3.11) 56(84) bytes of data.\n64 bytes from 10.18.3.11: icmp_seq=1 ttl=62 time=4.13 ms\n64 bytes from 10.18.3.11: icmp_seq=2 ttl=62 time=4.31 ms\n64 bytes from 10.18.3.11: icmp_seq=3 ttl=62 time=4.58 ms\n\n--- 10.18.3.11 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 217ms\nrtt min/avg/max/mdev = 4.127/4.337/4.575/0.183 ms\n",
+        "stderr": "",
+        "success": true
+      },
+      {
+        "source": "a1",
+        "destination": "c1",
+        "returncode": 0,
+        "stdout": "PING 10.18.1.10 (10.18.1.10) 56(84) bytes of data.\n64 bytes from 10.18.1.10: icmp_seq=1 ttl=62 time=4.32 ms\n64 bytes from 10.18.1.10: icmp_seq=2 ttl=62 time=4.25 ms\n64 bytes from 10.18.1.10: icmp_seq=3 ttl=62 time=4.45 ms\n\n--- 10.18.1.10 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 216ms\nrtt min/avg/max/mdev = 4.249/4.338/4.447/0.082 ms\n",
+        "stderr": "",
+        "success": true
+      },
+      {
+        "source": "c1",
+        "destination": "a2",
+        "returncode": 0,
+        "stdout": "PING 10.18.3.12 (10.18.3.12) 56(84) bytes of data.\n64 bytes from 10.18.3.12: icmp_seq=1 ttl=62 time=4.65 ms\n64 bytes from 10.18.3.12: icmp_seq=2 ttl=62 time=4.67 ms\n64 bytes from 10.18.3.12: icmp_seq=3 ttl=62 time=6.82 ms\n\n--- 10.18.3.12 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 211ms\nrtt min/avg/max/mdev = 4.652/5.382/6.822/1.018 ms\n",
+        "stderr": "",
+        "success": true
+      },
+      {
+        "source": "a2",
+        "destination": "c1",
+        "returncode": 0,
+        "stdout": "PING 10.18.1.10 (10.18.1.10) 56(84) bytes of data.\n64 bytes from 10.18.1.10: icmp_seq=1 ttl=62 time=4.60 ms\n64 bytes from 10.18.1.10: icmp_seq=2 ttl=62 time=9.58 ms\n64 bytes from 10.18.1.10: icmp_seq=3 ttl=62 time=4.42 ms\n\n--- 10.18.1.10 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 208ms\nrtt min/avg/max/mdev = 4.423/6.200/9.580/2.390 ms\n",
+        "stderr": "",
+        "success": true
+      },
+      {
+        "source": "c2",
+        "destination": "a1",
+        "returncode": 0,
+        "stdout": "PING 10.18.3.11 (10.18.3.11) 56(84) bytes of data.\n64 bytes from 10.18.3.11: icmp_seq=1 ttl=62 time=4.42 ms\n64 bytes from 10.18.3.11: icmp_seq=2 ttl=62 time=4.32 ms\n64 bytes from 10.18.3.11: icmp_seq=3 ttl=62 time=4.45 ms\n\n--- 10.18.3.11 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 221ms\nrtt min/avg/max/mdev = 4.315/4.395/4.453/0.058 ms\n",
+        "stderr": "",
+        "success": true
+      },
+      {
+        "source": "a1",
+        "destination": "c2",
+        "returncode": 0,
+        "stdout": "PING 10.18.2.10 (10.18.2.10) 56(84) bytes of data.\n64 bytes from 10.18.2.10: icmp_seq=1 ttl=62 time=5.50 ms\n64 bytes from 10.18.2.10: icmp_seq=2 ttl=62 time=4.35 ms\n64 bytes from 10.18.2.10: icmp_seq=3 ttl=62 time=4.42 ms\n\n--- 10.18.2.10 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 220ms\nrtt min/avg/max/mdev = 4.353/4.759/5.502/0.525 ms\n",
+        "stderr": "",
+        "success": true
+      },
+      {
+        "source": "c2",
+        "destination": "a2",
+        "returncode": 0,
+        "stdout": "PING 10.18.3.12 (10.18.3.12) 56(84) bytes of data.\n64 bytes from 10.18.3.12: icmp_seq=1 ttl=62 time=4.58 ms\n64 bytes from 10.18.3.12: icmp_seq=2 ttl=62 time=5.66 ms\n64 bytes from 10.18.3.12: icmp_seq=3 ttl=62 time=4.32 ms\n\n--- 10.18.3.12 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 215ms\nrtt min/avg/max/mdev = 4.321/4.853/5.663/0.581 ms\n",
+        "stderr": "",
+        "success": true
+      },
+      {
+        "source": "a2",
+        "destination": "c2",
+        "returncode": 0,
+        "stdout": "PING 10.18.2.10 (10.18.2.10) 56(84) bytes of data.\n64 bytes from 10.18.2.10: icmp_seq=1 ttl=62 time=4.41 ms\n64 bytes from 10.18.2.10: icmp_seq=2 ttl=62 time=6.17 ms\n64 bytes from 10.18.2.10: icmp_seq=3 ttl=62 time=4.49 ms\n\n--- 10.18.2.10 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss, time 206ms\nrtt min/avg/max/mdev = 4.411/5.023/6.173/0.813 ms\n",
+        "stderr": "",
+        "success": true
+      }
+    ],
+    "flows": {
+      "leaf1": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=13.151s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=2,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=13.151s, table=0, n_packets=160, n_bytes=107200, priority=100,ip,in_port=1,nw_src=10.18.1.0/24,nw_dst=10.18.3.0/24 actions=output:2\n cookie=0x1818, duration=1.914s, table=0, n_packets=154, n_bytes=106612, priority=100,ip,in_port=1,nw_src=10.18.2.0/24,nw_dst=10.18.3.0/24 actions=output:2\n cookie=0x1818, duration=13.151s, table=0, n_packets=160, n_bytes=107200, priority=100,ip,in_port=2,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=1.914s, table=0, n_packets=10, n_bytes=980, priority=100,ip,in_port=2,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=13.150s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=1 actions=output:2\n cookie=0x1818, duration=13.150s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=2 actions=output:1\n cookie=0x1818, duration=13.150s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=drop\n",
+      "leaf2": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=13.146s, table=0, n_packets=152, n_bytes=106416, priority=110,ip,in_port=1,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=13.146s, table=0, n_packets=8, n_bytes=784, priority=110,ip,in_port=2,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=13.145s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=4,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=13.145s, table=0, n_packets=106, n_bytes=56148, priority=110,ip,in_port=1,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=13.145s, table=0, n_packets=48, n_bytes=50464, priority=110,ip,in_port=2,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=13.145s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=3,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=13.144s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=3,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=13.144s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=4,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=13.144s, table=0, n_packets=120, n_bytes=103280, priority=100,ip,in_port=3,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=13.144s, table=0, n_packets=40, n_bytes=3920, priority=100,ip,in_port=4,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=1.910s, table=0, n_packets=40, n_bytes=3920, priority=100,ip,in_port=3,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=1.910s, table=0, n_packets=114, n_bytes=102692, priority=100,ip,in_port=4,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=13.144s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=1 actions=output:3,output:4\n cookie=0x1818, duration=13.144s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=3 actions=output:1,output:4\n cookie=0x1818, duration=13.144s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=4 actions=output:1,output:3\n cookie=0x1818, duration=13.143s, table=0, n_packets=13, n_bytes=1086, priority=0 actions=drop\n",
+      "spine1": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=13.145s, table=0, n_packets=258, n_bytes=162564, priority=100,ip,in_port=1 actions=output:2\n cookie=0x1818, duration=13.145s, table=0, n_packets=258, n_bytes=162564, priority=100,ip,in_port=2 actions=output:1\n cookie=0x1818, duration=13.145s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=1 actions=output:2\n cookie=0x1818, duration=13.145s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=2 actions=output:1\n cookie=0x1818, duration=13.145s, table=0, n_packets=9, n_bytes=726, priority=0 actions=drop\n",
+      "spine2": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=13.139s, table=0, n_packets=56, n_bytes=51248, priority=100,ip,in_port=1 actions=output:2\n cookie=0x1818, duration=13.139s, table=0, n_packets=56, n_bytes=51248, priority=100,ip,in_port=2 actions=output:1\n cookie=0x1818, duration=13.139s, table=0, n_packets=11, n_bytes=902, priority=0 actions=drop\n"
+    }
+  },
+  "new_profile": "A",
+  "finished_utc": "2026-11-16T13:22:12.825716+00:00",
+  "after_flows": {
+    "leaf1": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=13.179s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=2,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=13.179s, table=0, n_packets=160, n_bytes=107200, priority=100,ip,in_port=1,nw_src=10.18.1.0/24,nw_dst=10.18.3.0/24 actions=output:2\n cookie=0x1818, duration=1.942s, table=0, n_packets=154, n_bytes=106612, priority=100,ip,in_port=1,nw_src=10.18.2.0/24,nw_dst=10.18.3.0/24 actions=output:2\n cookie=0x1818, duration=13.179s, table=0, n_packets=160, n_bytes=107200, priority=100,ip,in_port=2,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=1.942s, table=0, n_packets=10, n_bytes=980, priority=100,ip,in_port=2,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=13.178s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=1 actions=output:2\n cookie=0x1818, duration=13.178s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=2 actions=output:1\n cookie=0x1818, duration=13.178s, table=0, n_packets=13, n_bytes=1062, priority=0 actions=drop\n",
+    "leaf2": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=13.172s, table=0, n_packets=152, n_bytes=106416, priority=110,ip,in_port=1,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=13.172s, table=0, n_packets=8, n_bytes=784, priority=110,ip,in_port=2,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=13.171s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=4,nw_dst=10.18.3.11 actions=output:3\n cookie=0x1818, duration=13.171s, table=0, n_packets=106, n_bytes=56148, priority=110,ip,in_port=1,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=13.171s, table=0, n_packets=48, n_bytes=50464, priority=110,ip,in_port=2,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=13.171s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=3,nw_dst=10.18.3.12 actions=output:4\n cookie=0x1818, duration=13.170s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=3,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=13.170s, table=0, n_packets=0, n_bytes=0, priority=110,ip,in_port=4,nw_dst=10.18.3.1 actions=output:1\n cookie=0x1818, duration=13.170s, table=0, n_packets=120, n_bytes=103280, priority=100,ip,in_port=3,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=13.170s, table=0, n_packets=40, n_bytes=3920, priority=100,ip,in_port=4,nw_dst=10.18.1.0/24 actions=output:1\n cookie=0x1818, duration=1.936s, table=0, n_packets=40, n_bytes=3920, priority=100,ip,in_port=3,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=1.936s, table=0, n_packets=114, n_bytes=102692, priority=100,ip,in_port=4,nw_dst=10.18.2.0/24 actions=output:1\n cookie=0x1818, duration=13.170s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=1 actions=output:3,output:4\n cookie=0x1818, duration=13.170s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=3 actions=output:1,output:4\n cookie=0x1818, duration=13.170s, table=0, n_packets=2, n_bytes=84, priority=100,arp,in_port=4 actions=output:1,output:3\n cookie=0x1818, duration=13.169s, table=0, n_packets=13, n_bytes=1086, priority=0 actions=drop\n",
+    "spine1": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=13.163s, table=0, n_packets=258, n_bytes=162564, priority=100,ip,in_port=1 actions=output:2\n cookie=0x1818, duration=13.163s, table=0, n_packets=258, n_bytes=162564, priority=100,ip,in_port=2 actions=output:1\n cookie=0x1818, duration=13.163s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=1 actions=output:2\n cookie=0x1818, duration=13.163s, table=0, n_packets=4, n_bytes=168, priority=100,arp,in_port=2 actions=output:1\n cookie=0x1818, duration=13.163s, table=0, n_packets=9, n_bytes=726, priority=0 actions=drop\n",
+    "spine2": "OFPST_FLOW reply (OF1.3) (xid=0x2):\n cookie=0x1818, duration=13.157s, table=0, n_packets=56, n_bytes=51248, priority=100,ip,in_port=1 actions=output:2\n cookie=0x1818, duration=13.157s, table=0, n_packets=56, n_bytes=51248, priority=100,ip,in_port=2 actions=output:1\n cookie=0x1818, duration=13.157s, table=0, n_packets=11, n_bytes=902, priority=0 actions=drop\n"
+  }
+}

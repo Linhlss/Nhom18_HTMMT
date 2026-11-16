@@ -1,0 +1,75 @@
+Cloning into '/home/ubuntu/Nhom18_TV1_clean_20261116'...
+Note: switching to '084189b5d27eeec5fdb2fa6edb13a634316b7c5c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Hit:1 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+mininet is already the newest version (2.3.0-1.1).
+openvswitch-switch is already the newest version (3.3.9-0ubuntu0.24.04.1).
+python3 is already the newest version (3.12.3-0ubuntu2.1).
+python3-venv is already the newest version (3.12.3-0ubuntu2.1).
+python3-pip is already the newest version (24.0+dfsg-1ubuntu1.3).
+iproute2 is already the newest version (6.1.0-1ubuntu6.4).
+iputils-ping is already the newest version (3:20240117-1ubuntu0.1).
+iperf3 is already the newest version (3.16-1build2).
+tcpdump is already the newest version (4.99.4-3ubuntu4.24.04.1).
+net-tools is already the newest version (2.10-0.1ubuntu4.4).
+ethtool is already the newest version (1:6.7-1build1).
+iptables is already the newest version (1.8.10-3ubuntu2).
+git is already the newest version (1:2.43.0-1ubuntu7.4).
+curl is already the newest version (8.5.0-2ubuntu10.16).
+ca-certificates is already the newest version (20260816ubuntu0.24.04.2).
+openssh-server is already the newest version (1:9.6p1-3ubuntu13.20).
+0 upgraded, 0 newly installed, 0 to remove and 19 not upgraded.
+Synchronizing state of openvswitch-switch.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable openvswitch-switch
+Synchronizing state of ssh.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable ssh
+e3a3c654-f5a5-4341-aae2-0a15f681259b
+    ovs_version: "3.3.9"
+Mininet Python import: OK
+SETUP PASS. Next: sudo bash scripts/verify-week1.sh
+test_busy_rejected_before_any_install (test_apply.ApplyTests.test_busy_rejected_before_any_install) ... ok
+test_failed_rollback_marks_unknown_not_success (test_apply.ApplyTests.test_failed_rollback_marks_unknown_not_success) ... ok
+test_failed_verification_rolls_back_and_still_fails (test_apply.ApplyTests.test_failed_verification_rolls_back_and_still_fails) ... ok
+test_ignore_preserves_a (test_apply.ApplyTests.test_ignore_preserves_a) ... ok
+test_repeated_apply_is_verified_and_logged (test_apply.ApplyTests.test_repeated_apply_is_verified_and_logged) ... ok
+test_unconfirmed_and_invalid_do_not_apply (test_apply.ApplyTests.test_unconfirmed_and_invalid_do_not_apply) ... ok
+test_counter_changes_do_not_hide_rule_changes (test_network_model.ModelTests.test_counter_changes_do_not_hide_rule_changes) ... ok
+test_invalid_profile_rejected (test_network_model.ModelTests.test_invalid_profile_rejected) ... ok
+test_profile_paths_and_arp_are_deterministic (test_network_model.ModelTests.test_profile_paths_and_arp_are_deterministic) ... ok
+test_topology_connected_and_exact_size (test_network_model.ModelTests.test_topology_connected_and_exact_size) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.005s
+
+OK
+PASS initial-zero-loss-and-exact-rules
+PASS exec-preserves-failure-exit-code
+PASS all-20-interface-shapers-have-declared-rates
+PASS cleanup-removes-owned-resources
+PASS lifecycle-1
+PASS lifecycle-cleanup-1
+PASS lifecycle-2
+PASS lifecycle-cleanup-2
+EVIDENCE /home/ubuntu/Nhom18_TV1_clean_20261116/evidence/network/20261116T133228480187Z-clean-clone

@@ -1,6 +1,6 @@
 # Minh chứng tuần 1 — TV1 / N18-001
 
-**Kết quả kỹ thuật:** đạt bài thử môi trường hai host. **Trạng thái nghiệm thu: Chờ kiểm tra bởi TV4.**
+**Kết quả kỹ thuật:** đạt bài thử môi trường hai host. **Trạng thái nghiệm thu: Hoàn thành.** Người dùng xác nhận TV4 đã nghiệm thu trong phiên bàn giao ngày 16/11/2026; đây là ngày ghi nhận xác nhận, không gán lại ngày thực hiện review. Các log kiểm thử ngày 12/11 được giữ nguyên.
 
 Thực hiện ngày 12/11/2026. Timestamp trong tên thư mục và log dùng UTC (giờ Việt Nam = UTC + 7).
 
@@ -26,7 +26,7 @@ Boot ID trước reboot: `87569009-6bba-43e6-83b4-aad7548b8bf2`. Sau reboot: `53
 
 1. Đọc [ma trận môi trường và hướng dẫn bàn giao](../../docs/env-matrix.md).
 2. Kiểm tra raw log, JSON, packages và checksum; chạy lại verify trong Ubuntu 24.04 đúng kiến trúc.
-3. TV4 ghi nhận review thực tế rồi mới đổi N18-001 thành Hoàn thành.
+3. N18-001 đã được ghi nhận review TV4 theo xác nhận của người dùng; các task mới được kiểm thử/review riêng.
 4. TV2 bắt đầu N18-002 về đặc tả workload; G1 chưa được chốt chỉ từ bài thử này.
 
-**Giới hạn:** mới chạy thực tế trên Mac ARM/UTM; chưa chạy trên Mac Intel hoặc Windows. Chưa triển khai topology 10 node, workload hoàn chỉnh, profile A/B hay benchmark hiệu năng AI. Negative control là kiểm thử cơ chế báo lỗi, không phải kết quả kết nối đạt.
+**Giới hạn của minh chứng tuần 1:** chỉ bao gồm Mac ARM/UTM và bài thử hai host; chưa xác minh Mac Intel/Windows, topology đầy đủ hay hiệu năng AI tại thời điểm đó. Hạ tầng 10 node/A–B được bổ sung và kiểm thử riêng tại [evidence mạng](../network/README.md). Negative control là kiểm thử cơ chế báo lỗi, không phải kết quả kết nối đạt.

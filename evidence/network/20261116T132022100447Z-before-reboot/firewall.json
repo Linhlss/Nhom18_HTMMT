@@ -1,0 +1,46 @@
+{
+  "allowed": [
+    {
+      "returncode": 0,
+      "stdout": "nhom18-network-probe\n",
+      "stderr": "",
+      "success": true
+    },
+    {
+      "returncode": 0,
+      "stdout": "nhom18-network-probe\n",
+      "stderr": "",
+      "success": true
+    }
+  ],
+  "blocked": [
+    {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "timed out\n",
+      "success": true
+    },
+    {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "timed out\n",
+      "success": true
+    }
+  ],
+  "before": {
+    "returncode": 0,
+    "stdout": "Chain FORWARD (policy DROP 0 packets, 0 bytes)\n    pkts      bytes target     prot opt in     out     source               destination         \n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate INVALID\n    1332  1196400 ACCEPT     0    --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED\n      38    10056 ACCEPT     1    --  *      *       10.18.1.0/24         10.18.3.0/24        \n      32     2688 ACCEPT     1    --  *      *       10.18.3.0/24         10.18.1.0/24        \n       0        0 ACCEPT     6    --  *      *       10.18.1.0/24         10.18.3.0/24         multiport dports 8000,5201:5208 ctstate NEW\n      38    10056 ACCEPT     1    --  *      *       10.18.2.0/24         10.18.3.0/24        \n      32     2688 ACCEPT     1    --  *      *       10.18.3.0/24         10.18.2.0/24        \n       0        0 ACCEPT     6    --  *      *       10.18.2.0/24         10.18.3.0/24         multiport dports 8000,5201:5208 ctstate NEW\n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0           \n",
+    "stderr": "",
+    "success": true
+  },
+  "after": {
+    "returncode": 0,
+    "stdout": "Chain FORWARD (policy DROP 0 packets, 0 bytes)\n    pkts      bytes target     prot opt in     out     source               destination         \n       0        0 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate INVALID\n    1346  1197184 ACCEPT     0    --  *      *       0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED\n      38    10056 ACCEPT     1    --  *      *       10.18.1.0/24         10.18.3.0/24        \n      32     2688 ACCEPT     1    --  *      *       10.18.3.0/24         10.18.1.0/24        \n       1       60 ACCEPT     6    --  *      *       10.18.1.0/24         10.18.3.0/24         multiport dports 8000,5201:5208 ctstate NEW\n      38    10056 ACCEPT     1    --  *      *       10.18.2.0/24         10.18.3.0/24        \n      32     2688 ACCEPT     1    --  *      *       10.18.3.0/24         10.18.2.0/24        \n       1       60 ACCEPT     6    --  *      *       10.18.2.0/24         10.18.3.0/24         multiport dports 8000,5201:5208 ctstate NEW\n       4      240 DROP       0    --  *      *       0.0.0.0/0            0.0.0.0/0           \n",
+    "stderr": "",
+    "success": true
+  },
+  "busy_apply": {
+    "success": false,
+    "error": "Stop workload commands before changing profile"
+  }
+}

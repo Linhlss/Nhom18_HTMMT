@@ -1,0 +1,39 @@
+{
+  "started_utc": "2026-11-16T13:19:01.892116+00:00",
+  "success": false,
+  "label": "before-reboot",
+  "quick": false,
+  "error": "path-a-1: {'spine1': {'c1': 48, 'c2': 46}, 'spine2': {'c1': 0, 'c2': 0}}",
+  "cases": [
+    {
+      "name": "initial-zero-loss-and-exact-rules",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "all-20-interface-shapers-have-declared-rates",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-a-1",
+      "success": false,
+      "details": {
+        "spine1": {
+          "c1": 48,
+          "c2": 46
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 0
+        }
+      }
+    }
+  ],
+  "finished_utc": "2026-11-16T13:19:10.408509+00:00"
+}

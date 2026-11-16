@@ -1,0 +1,15 @@
+{
+  "started_utc": "2026-11-16T13:18:01.362854+00:00",
+  "success": false,
+  "label": "before-reboot",
+  "quick": false,
+  "error": "['tc', '-s', 'class', 'show', 'dev', 'c1-eth0']: 1: Cannot find device \"c1-eth0\"\n ",
+  "cases": [
+    {
+      "name": "initial-zero-loss-and-exact-rules",
+      "success": true,
+      "details": null
+    }
+  ],
+  "finished_utc": "2026-11-16T13:18:06.498754+00:00"
+}

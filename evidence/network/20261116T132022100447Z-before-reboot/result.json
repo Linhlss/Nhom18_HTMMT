@@ -1,0 +1,154 @@
+{
+  "started_utc": "2026-11-16T13:20:22.100591+00:00",
+  "success": false,
+  "label": "before-reboot",
+  "quick": false,
+  "error": "firewall-allows-8000-blocks-listening-9000: None",
+  "cases": [
+    {
+      "name": "initial-zero-loss-and-exact-rules",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "all-20-interface-shapers-have-declared-rates",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-a-1",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 40,
+          "c2": 40
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 0
+        }
+      }
+    },
+    {
+      "name": "apply-B",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-b-1",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 46,
+          "c2": 0
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 44
+        }
+      }
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-a-2",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 40,
+          "c2": 40
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 0
+        }
+      }
+    },
+    {
+      "name": "apply-B",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-b-2",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 42,
+          "c2": 0
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 42
+        }
+      }
+    },
+    {
+      "name": "apply-A",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-a-3",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 48,
+          "c2": 46
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 0
+        }
+      }
+    },
+    {
+      "name": "apply-B",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "path-b-3",
+      "success": true,
+      "details": {
+        "spine1": {
+          "c1": 46,
+          "c2": 0
+        },
+        "spine2": {
+          "c1": 0,
+          "c2": 46
+        }
+      }
+    },
+    {
+      "name": "probe-listens-on-allowed-and-blocked-ports",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "apply-refuses-running-workload",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "probe-server-exits",
+      "success": true,
+      "details": null
+    },
+    {
+      "name": "firewall-allows-8000-blocks-listening-9000",
+      "success": false,
+      "details": null
+    }
+  ],
+  "finished_utc": "2026-11-16T13:20:56.595544+00:00"
+}
