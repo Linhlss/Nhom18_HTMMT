@@ -82,14 +82,17 @@
   - Phụ thuộc: —  
   - Minh chứng: `docs/env-matrix.md`
 - [ ] **N18-002 | TV2 | 2 điểm — Đặc tả workload request/response và cấu hình**  
+  - Trạng thái ngày 18/11/2026: **Chờ kiểm tra** bởi TV3. Có [đặc tả v1.0](docs/workload-spec.md), mã `workload/` và [bài thử 10/10](evidence/tv2-week1/README.md) chạy trên VM TV1; TV2 còn phải tự chạy lại, TV3 review theo [biên bản](qa/week1-review.md).
   - Nghiệm thu: Chốt trường size/rate/concurrency/service-delay; schema có ví dụ không dùng như dữ liệu đo  
   - Phụ thuộc: —  
   - Minh chứng: `docs/workload-spec.md`
 - [ ] **N18-003 | TV3 | 2 điểm — Đặc tả metrics, baseline và protocol đo**  
+  - Trạng thái ngày 18/11/2026: **Chờ kiểm tra** bởi TV1. Có [đặc tả v1.0](docs/metrics-spec.md), converter `measurement/` và [ping/iperf3 + CSV](evidence/tv3-week1/README.md) (đã sửa F1/F2); TV3 tự chạy lại, TV1 review và chạy lại.
   - Nghiệm thu: Bảng metric có đơn vị, công thức và công cụ; kế hoạch đo RTT/throughput/utilization  
   - Phụ thuộc: —  
   - Minh chứng: `docs/metrics-spec.md`
 - [ ] **N18-004 | TV4 | 2 điểm — Soạn RQ, phạm vi, rubric và cấu trúc repository để TV1 phê duyệt**  
+  - Trạng thái ngày 18/11/2026: **Chờ kiểm tra**. Có [scope-rubric v1.0](docs/scope-rubric.md) với E01–E10, [kiểm tra log](evidence/tv4-week1/README.md), [biên bản](qa/week1-review.md), [bản nháp issue](qa/issues/); còn tạo board/issue trên GitHub, TV2 review và **TV1 phê duyệt**.
   - Nghiệm thu: RQ1-3 + E01-E10 + tài liệu 2 chương và conventions; issue board; TV1 xác nhận phạm vi  
   - Phụ thuộc: —  
   - Minh chứng: `docs/scope-rubric.md`

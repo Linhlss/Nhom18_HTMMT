@@ -1,0 +1,21 @@
+{
+  "collected_utc": "2026-11-18T11:29:52.877192Z",
+  "machine_note": "Ghi đúng máy thực hiện: VM nào, của ai; không coi là kiểm thử trên máy thành viên khác.",
+  "hostname": "nhom18-w1",
+  "uname": "Linux nhom18-w1 6.8.0-149-generic #149-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct 23 13:37:55 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux",
+  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+  "boot_id": "2a2fd532-0d9a-4069-83bc-ba94de68a743",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "packages": "iperf3\t3.16-1build2\tarm64\niputils-ping\t3:20240117-1ubuntu0.1\tarm64\nmininet\t2.3.0-1.1\tarm64\nopenvswitch-switch\t3.3.9-0ubuntu0.24.04.1\tarm64\npython3\t3.12.3-0ubuntu2.1\tarm64",
+  "git_commit": "af83849fc04a70fc0aa2530fc636ac1b1a0ff1b6",
+  "git_branch": "claude/complete-week1-n18-3fc6c1",
+  "git_status_short": "?? evidence/tv2-week1/\n?? evidence/tv3-week1/\n?? evidence/tv4-week1/",
+  "runner": "measurement/week1_probe.py",
+  "argv": [
+    "measurement/week1_probe.py",
+    "--label",
+    "tv3-probe-rerun"
+  ],
+  "network_session_id": "3a3beeff190934dd",
+  "network_config_hash": "62ac600b80b26ea18bf8c1fd30841e722bd81c7e950d5dc41b6acca841253f8e"
+}

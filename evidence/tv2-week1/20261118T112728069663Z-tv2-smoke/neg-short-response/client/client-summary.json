@@ -1,0 +1,80 @@
+{
+  "run_id": "20261118T112728069663Z-tv2-smoke-neg-short-response",
+  "config_id": "smoke_c1_a1_v1",
+  "config_sha256": "3360ec52c0b4e8c1508f39ceb0cae715340b2a9b5761b8413d4e5f428d148605",
+  "config_path": "workload/configs/smoke-c1-a1.json",
+  "profile": "A",
+  "run_kind": "smoke",
+  "client_host": "c1",
+  "started_utc": "2026-11-18T11:27:36.103543Z",
+  "t0_utc": "2026-11-18T11:27:36.108996Z",
+  "finished_utc": "2026-11-18T11:27:37.974204Z",
+  "flows": [
+    {
+      "flow_id": 0,
+      "server": {
+        "name": "a1",
+        "ip": "10.18.3.11",
+        "port": 8000
+      },
+      "src_port": 50454,
+      "conn_error": null,
+      "errors": []
+    }
+  ],
+  "requests_expected": 10,
+  "status_counts": {
+    "OK": 9,
+    "SIZE_MISMATCH": 1
+  },
+  "unmatched_responses": [],
+  "all_ok": false,
+  "target_offered_load_app": {
+    "client_to_server_mbps": 0.04096,
+    "server_to_client_mbps": 0.16384
+  },
+  "rate_target_rps_per_flow": 5.0,
+  "load_check": {
+    "rule": "achieved >= 0.95 x target and p95 send lag <= 0.5 x interval; None = too few samples",
+    "per_flow": [
+      {
+        "flow_id": 0,
+        "measured_sends": 10,
+        "rate_achieved_send_rps": 5.008212862544348,
+        "send_lag_p95_ms": 4.824394,
+        "load_sustained": true
+      }
+    ],
+    "load_sustained": true
+  },
+  "app_response_ms": {
+    "count": 9,
+    "min": 10.61852,
+    "mean": 11.681349888888889,
+    "p50": 11.679411,
+    "p95": 12.227418,
+    "p99": 12.227418,
+    "max": 12.227418
+  },
+  "server_proc_ms": {
+    "count": 9,
+    "min": 6.151168,
+    "mean": 6.470116222222222,
+    "p50": 6.503714,
+    "p95": 6.637549,
+    "p99": 6.637549,
+    "max": 6.637549
+  },
+  "network_residual_est_ms_valid": {
+    "count": 9,
+    "min": 4.317351,
+    "mean": 5.211233666666667,
+    "p50": 5.324406,
+    "p95": 5.733996,
+    "p99": 5.733996,
+    "max": 5.733996
+  },
+  "residual_invalid_count": 0,
+  "percentile_method": "nearest-rank over measured OK requests (is_warmup=0)",
+  "exit_code": 4
+}

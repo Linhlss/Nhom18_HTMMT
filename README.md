@@ -14,6 +14,25 @@ Prototype giám sát, đánh giá cấu hình mạng Data Center Spine–Leaf ch
 - [AI Prompts & Verification Log](docs/ai-prompts-verification-log.md)
 - [Bộ đề cương gốc](README_BAT_DAU.md)
 
+## Tuần 1 — đặc tả và bài thử của TV2, TV3, TV4
+
+| Task | Tài liệu | Mã | Minh chứng | Trạng thái |
+|---|---|---|---|---|
+| N18-002 (TV2) | [workload-spec.md](docs/workload-spec.md) | [workload/](workload/) | [evidence/tv2-week1](evidence/tv2-week1/README.md) | Chờ kiểm tra (TV3 review) |
+| N18-003 (TV3) | [metrics-spec.md](docs/metrics-spec.md) | [measurement/](measurement/) | [evidence/tv3-week1](evidence/tv3-week1/README.md) | Chờ kiểm tra (TV1 review) |
+| N18-004 (TV4) | [scope-rubric.md](docs/scope-rubric.md) | [qa/](qa/) | [evidence/tv4-week1](evidence/tv4-week1/README.md) | Chờ kiểm tra (TV2 review, TV1 phê duyệt) |
+
+Biên bản review và việc còn thiếu: [qa/week1-review.md](qa/week1-review.md). Gate **G1 chưa chốt**. Bài thử tuần 1 chạy trên VM của TV1; mỗi thành viên vẫn phải tự chạy lại phần của mình:
+
+```bash
+python3 -m unittest discover -s tests -v
+sudo /usr/bin/python3 control/networkctl.py start --profile A
+sudo /usr/bin/python3 workload/smoke_test.py --label tv2-smoke --negative
+sudo /usr/bin/python3 measurement/week1_probe.py --label tv3-probe
+sudo /usr/bin/python3 control/networkctl.py stop
+python3 qa/check_week1_logs.py --tv2 evidence/tv2-week1/<run> --tv3 evidence/tv3-week1/<run> --out evidence/tv4-week1/<UTC>-tv4-logcheck
+```
+
 Trong **Ubuntu 24.04 VM** đúng kiến trúc:
 
 ```bash

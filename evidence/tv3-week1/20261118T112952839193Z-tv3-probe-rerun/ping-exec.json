@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/home/ubuntu/Nhom18_week1_tv234/control/networkctl.py",
+    "exec",
+    "--timeout",
+    "30",
+    "c1",
+    "--",
+    "ping",
+    "-D",
+    "-n",
+    "-c",
+    "20",
+    "-i",
+    "0.2",
+    "-W",
+    "2",
+    "10.18.3.11"
+  ],
+  "started_note": "raw stdout saved to ping-c1-a1.txt",
+  "returncode": 0,
+  "stderr": "",
+  "success": true
+}

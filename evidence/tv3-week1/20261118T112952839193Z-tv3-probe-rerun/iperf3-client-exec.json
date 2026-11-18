@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/home/ubuntu/Nhom18_week1_tv234/control/networkctl.py",
+    "exec",
+    "--timeout",
+    "40",
+    "c1",
+    "--",
+    "iperf3",
+    "-c",
+    "10.18.3.11",
+    "-p",
+    "5201",
+    "-P",
+    "1",
+    "-t",
+    "10",
+    "-O",
+    "2",
+    "-J"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "success": true
+}

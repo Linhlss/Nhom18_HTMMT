@@ -1,0 +1,53 @@
+{
+  "run_id": "20261118T112753790043Z-tv3-probe",
+  "started_utc": "2026-11-18T11:27:53.790156Z",
+  "success": true,
+  "checks": {
+    "testbed_running_profile_A": true,
+    "ping_exit_0": true,
+    "iperf3_server_listening": true,
+    "iperf3_client_exit_0": true,
+    "iperf3_server_exit_0": true,
+    "ping_csv_ok": true,
+    "iperf3_csv_ok": true,
+    "ping_20_of_20": true
+  },
+  "profile": "A",
+  "finished_utc": "2026-11-18T11:28:09.960656Z",
+  "commands": {
+    "ping": [
+      "ping",
+      "-D",
+      "-n",
+      "-c",
+      "20",
+      "-i",
+      "0.2",
+      "-W",
+      "2",
+      "10.18.3.11"
+    ],
+    "iperf3_server": [
+      "iperf3",
+      "-s",
+      "-1",
+      "-p",
+      "5201",
+      "-J"
+    ],
+    "iperf3_client": [
+      "iperf3",
+      "-c",
+      "10.18.3.11",
+      "-p",
+      "5201",
+      "-P",
+      "1",
+      "-t",
+      "10",
+      "-O",
+      "2",
+      "-J"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "run_id": "20261118T113018044375Z-tv2-smoke-rerun-neg-short-response",
+  "config_id": "smoke_c1_a1_v1",
+  "config_sha256": "3360ec52c0b4e8c1508f39ceb0cae715340b2a9b5761b8413d4e5f428d148605",
+  "config_path": "workload/configs/smoke-c1-a1.json",
+  "profile": "A",
+  "run_kind": "smoke",
+  "client_host": "c1",
+  "started_utc": "2026-11-18T11:30:26.088371Z",
+  "t0_utc": "2026-11-18T11:30:26.093802Z",
+  "finished_utc": "2026-11-18T11:30:27.959033Z",
+  "flows": [
+    {
+      "flow_id": 0,
+      "server": {
+        "name": "a1",
+        "ip": "10.18.3.11",
+        "port": 8000
+      },
+      "src_port": 40746,
+      "conn_error": null,
+      "errors": []
+    }
+  ],
+  "requests_expected": 10,
+  "status_counts": {
+    "OK": 9,
+    "SIZE_MISMATCH": 1
+  },
+  "unmatched_responses": [],
+  "all_ok": false,
+  "target_offered_load_app": {
+    "client_to_server_mbps": 0.04096,
+    "server_to_client_mbps": 0.16384
+  },
+  "rate_target_rps_per_flow": 5.0,
+  "load_check": {
+    "rule": "achieved >= 0.95 x target and p95 send lag <= 0.5 x interval; None = too few samples",
+    "per_flow": [
+      {
+        "flow_id": 0,
+        "measured_sends": 10,
+        "rate_achieved_send_rps": 5.00921073633354,
+        "send_lag_p95_ms": 4.900745,
+        "load_sustained": true
+      }
+    ],
+    "load_sustained": true
+  },
+  "app_response_ms": {
+    "count": 9,
+    "min": 10.659272,
+    "mean": 11.68608588888889,
+    "p50": 11.857856,
+    "p95": 12.461869,
+    "p99": 12.461869,
+    "max": 12.461869
+  },
+  "server_proc_ms": {
+    "count": 9,
+    "min": 5.719041,
+    "mean": 6.471033,
+    "p50": 6.583386,
+    "p95": 7.026992,
+    "p99": 7.026992,
+    "max": 7.026992
+  },
+  "network_residual_est_ms_valid": {
+    "count": 9,
+    "min": 4.334565,
+    "mean": 5.215052888888889,
+    "p50": 5.341473,
+    "p95": 5.482703,
+    "p99": 5.482703,
+    "max": 5.482703
+  },
+  "residual_invalid_count": 0,
+  "percentile_method": "nearest-rank over measured OK requests (is_warmup=0)",
+  "exit_code": 4
+}
