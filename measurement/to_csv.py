@@ -110,30 +110,42 @@ def iperf3_to_csv(raw, args):
     rows = []
     for i, interval in enumerate(data.get('intervals', [])):
         s = interval['sum']
+        span = s['end'] - s['start']
+        # iperf3 3.16 resets its time base when -O ends; the first interval after the omit
+        # period can report seconds (~2 s) inconsistent with end-start. Keep the raw values,
+        # flag the interval and do not use it for per-interval min/max (docs/metrics-spec.md §8).
+        suspect = abs(span - s['seconds']) > 0.05
         rows.append({**base, 'interval_index': i, 'start_s': s['start'], 'end_s': s['end'],
-                     'seconds': s['seconds'], 'omitted': int(bool(s.get('omitted'))),
-                     'start_utc': iso_from_epoch(epoch + s['start']) if epoch else None,
+                     'seconds': s['seconds'], 'seconds_end_minus_start': round(span, 6),
+                     'timing_suspect': int(suspect), 'omitted': int(bool(s.get('omitted'))),
                      'bytes': s['bytes'], 'goodput_mbps': round(s['bits_per_second'] / 1e6, 6),
                      'retransmits': s.get('retransmits'), 'raw_file': Path(raw).name})
     write_csv(Path(args.out_dir) / 'iperf3-intervals.csv',
               ['run_id', 'config_id', 'profile', 'src_host', 'dst_host', 'interval_index', 'start_s', 'end_s',
-               'seconds', 'omitted', 'start_utc', 'bytes', 'goodput_mbps', 'retransmits', 'raw_file'], rows)
+               'seconds', 'seconds_end_minus_start', 'timing_suspect', 'omitted', 'bytes', 'goodput_mbps',
+               'retransmits', 'raw_file'], rows)
     sent, received = end.get('sum_sent', {}), end.get('sum_received', {})
     if not received:
         raise ParseError('end.sum_received missing')
     measured = [r for r in rows if not r['omitted']]
+    reliable = [r for r in measured if not r['timing_suspect']]
+    measured_bytes = sum(r['bytes'] for r in measured)
     summary = {
         **base, 'protocol': test.get('protocol'), 'parallel_streams': test.get('num_streams'),
         'omit_s': test.get('omit'), 'duration_s_requested': test.get('duration'),
         'test_start_utc': iso_from_epoch(epoch) if epoch else None,
-        'measured_intervals': len(measured), 'measured_seconds_from_intervals': round(sum(r['seconds'] for r in measured), 6),
+        'measured_intervals': len(measured), 'timing_suspect_intervals': len(measured) - len(reliable),
+        'measured_bytes_from_intervals': measured_bytes,
+        'interval_bytes_match_sender': int(measured_bytes == sent.get('bytes')),
         'sender_seconds': sent.get('seconds'), 'sender_bytes': sent.get('bytes'),
         'sender_goodput_mbps': round(sent['bits_per_second'] / 1e6, 6) if sent else None,
         'tcp_retransmits': sent.get('retransmits'),
         'receiver_seconds': received.get('seconds'), 'receiver_bytes': received.get('bytes'),
         'receiver_goodput_mbps': round(received['bits_per_second'] / 1e6, 6),
-        'interval_goodput_min_mbps': min((r['goodput_mbps'] for r in measured), default=None),
-        'interval_goodput_max_mbps': max((r['goodput_mbps'] for r in measured), default=None),
+        'interval_goodput_min_mbps': min((r['goodput_mbps'] for r in reliable), default=None),
+        'interval_goodput_max_mbps': max((r['goodput_mbps'] for r in reliable), default=None),
+        'measurement_window_note': 'window = sender_seconds/receiver_seconds from iperf3 end.sum_*; '
+                                   'interval start/end are relative to the post-omit time base',
         'metric_note': 'iperf3 TCP payload goodput, not interface throughput; includes no headers',
         'raw_file': Path(raw).name, 'raw_sha256': sha256_file(raw),
     }

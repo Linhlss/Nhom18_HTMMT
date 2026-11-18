@@ -137,9 +137,12 @@ def check_tv3(r, d):
             f'{summ["icmp_loss_pct"]} %')
     rtts = [t for _, t in raw_samples]
     mn, avg, mx, _ = map(float, PING_RTT.search(raw).groups())
-    r.check(area, 'min/mean/max CSV khớp dòng tổng kết ping (avg làm tròn 0,001 ms)',
-            float(summ['icmp_rtt_min_ms']) == mn and float(summ['icmp_rtt_max_ms']) == mx
-            and abs(float(summ['icmp_rtt_mean_ms']) - avg) <= 0.0015,
+    # ping prints each reply with 3 significant digits (4.26 ms) but its summary from unrounded
+    # values (4.256 ms): accept differences up to half a printed digit (0.005 ms for 1-10 ms).
+    q = 0.005 + 1e-9
+    r.check(area, 'min/mean/max CSV khớp tổng kết ping trong sai số làm tròn mẫu (±0,005 ms)',
+            abs(float(summ['icmp_rtt_min_ms']) - mn) <= q and abs(float(summ['icmp_rtt_max_ms']) - mx) <= q
+            and abs(float(summ['icmp_rtt_mean_ms']) - avg) <= q,
             f'ping {mn}/{avg}/{mx}; CSV {summ["icmp_rtt_min_ms"]}/{summ["icmp_rtt_mean_ms"]}/{summ["icmp_rtt_max_ms"]}')
     r.check(area, 'p95/p99 nearest-rank tính lại khớp CSV (n=20)',
             float(summ['icmp_rtt_p95_ms']) == nearest_rank(rtts, 95) and float(summ['icmp_rtt_p99_ms']) == nearest_rank(rtts, 99),
@@ -155,9 +158,18 @@ def check_tv3(r, d):
     r.check(area, 'receiver goodput CSV = end.sum_received.bits_per_second/1e6 trong raw JSON',
             abs(float(isum['receiver_goodput_mbps']) - recv_mbps) < 1e-6, f'raw={recv_mbps:.6f} Mbps; CSV={isum["receiver_goodput_mbps"]}')
     meas = [i['sum'] for i in data['intervals'] if not i['sum'].get('omitted')]
-    secs = sum(i['seconds'] for i in meas)
-    r.check(area, 'khoảng đo không tính phần omit ≈ 10 s', abs(secs - 10) <= 0.25 and
-            abs(float(isum['measured_seconds_from_intervals']) - secs) < 1e-6, f'{secs:.3f} s, {len(meas)} interval')
+    secs = data['end']['sum_sent']['seconds']
+    meas_bytes = sum(i['bytes'] for i in meas)
+    r.check(area, 'khoảng đo (end.sum_sent.seconds) ≈ 10 s, không gồm 2 s omit; byte các interval đo = sum_sent.bytes',
+            abs(secs - 10) <= 0.25 and meas_bytes == data['end']['sum_sent']['bytes']
+            and int(isum['measured_bytes_from_intervals']) == meas_bytes,
+            f'{secs:.4f} s; {len(meas)} interval; {meas_bytes} B')
+    suspect = [n for n, i in enumerate(meas) if abs((i['end'] - i['start']) - i['seconds']) > 0.05]
+    rows = read_csv(d / 'iperf3-intervals.csv')
+    flagged = [n for n, x in enumerate([x for x in rows if x['omitted'] == '0']) if x['timing_suspect'] == '1']
+    r.check(area, 'interval có thời gian bất thường (seconds ≠ end−start) được đánh dấu timing_suspect',
+            suspect == flagged and int(isum['timing_suspect_intervals']) == len(suspect),
+            f'raw: {suspect}; CSV: {flagged}')
     for name in ('ping-c1-a1.txt', 'iperf3-c1-a1-client.json'):
         csv_name = 'ping-summary.csv' if name.startswith('ping') else 'iperf3-summary.csv'
         recorded = read_csv(d / csv_name)[0]['raw_sha256']

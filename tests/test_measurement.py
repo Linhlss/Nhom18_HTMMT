@@ -79,6 +79,18 @@ class ConverterTests(unittest.TestCase):
         self.assertEqual(float(summary['interval_goodput_min_mbps']), 2.0)
         intervals = rows(self.tmp / 'iperf3-intervals.csv')
         self.assertEqual(sum(int(r['omitted']) for r in intervals), 2)
+        self.assertEqual(summary['interval_bytes_match_sender'], '1')
+
+    def test_iperf3_post_omit_interval_flagged(self):
+        data = iperf_fixture()
+        first = data['intervals'][2]['sum']  # first measured interval, as reported by iperf3 3.16
+        first.update(start=0.9997, end=1.0009, seconds=2.0007, bits_per_second=first['bytes'] * 8 / 2.0007)
+        raw = self.tmp / 'iperf-omit.json'
+        raw.write_text(json.dumps(data))
+        self.assertEqual(to_csv(['iperf3', str(raw), *self.common]), 0)
+        summary = rows(self.tmp / 'iperf3-summary.csv')[0]
+        self.assertEqual(summary['timing_suspect_intervals'], '1')
+        self.assertEqual(float(summary['interval_goodput_min_mbps']), 2.0)  # suspect interval excluded
 
     def test_iperf3_error_fails(self):
         raw = self.tmp / 'err.json'
