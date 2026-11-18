@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "config_id": "smoke_c1_a1_v1",
+  "description": "Bài thử khởi động tuần 1: một kết nối c1→a1, TCP/8000, 10 request. Tham số là lựa chọn cho bài thử, không phải số liệu đo.",
+  "run_kind": "smoke",
+  "protocol": "tcp-binary-v1",
+  "network": {
+    "clients": [
+      {
+        "name": "c1",
+        "ip": "10.18.1.10"
+      }
+    ],
+    "servers": [
+      {
+        "name": "a1",
+        "ip": "10.18.3.11",
+        "port": 8000
+      }
+    ],
+    "client_assignment": "round_robin"
+  },
+  "workload": {
+    "req_size_bytes": 1024,
+    "resp_size_bytes": 4096,
+    "rate_rps_per_flow": 5.0,
+    "concurrency": 1,
+    "service_delay_ms": 5.0
+  },
+  "execution": {
+    "warmup_sec": 0,
+    "duration_sec": 10,
+    "max_requests_per_flow": 10,
+    "timeout_ms": 2000,
+    "seed": 0
+  }
+}

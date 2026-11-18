@@ -1,0 +1,17 @@
+{
+  "run_id": "20261118T112728069663Z-tv2-smoke-neg-wrong-id",
+  "host_name": "a1",
+  "port": 8000,
+  "started_utc": "2026-11-18T11:27:30.510262Z",
+  "finished_utc": "2026-11-18T11:27:35.738237Z",
+  "expect_requests": 10,
+  "served": 10,
+  "valid": 10,
+  "invalid": 0,
+  "protocol_errors": 0,
+  "timed_out": false,
+  "fault": "wrong-id",
+  "fault_seq": 3,
+  "faults_injected": 1,
+  "exit_code": 0
+}

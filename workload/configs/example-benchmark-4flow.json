@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "config_id": "example_benchmark_4flow_v1",
+  "description": "VÍ DỤ MINH HỌA schema benchmark: chưa hiệu chỉnh qua pilot, chưa dùng để đo; không phải dữ liệu đo.",
+  "run_kind": "benchmark",
+  "protocol": "tcp-binary-v1",
+  "network": {
+    "clients": [
+      {
+        "name": "c1",
+        "ip": "10.18.1.10"
+      },
+      {
+        "name": "c2",
+        "ip": "10.18.2.10"
+      }
+    ],
+    "servers": [
+      {
+        "name": "a1",
+        "ip": "10.18.3.11",
+        "port": 8000
+      },
+      {
+        "name": "a2",
+        "ip": "10.18.3.12",
+        "port": 8000
+      }
+    ],
+    "client_assignment": "round_robin"
+  },
+  "workload": {
+    "req_size_bytes": 1024,
+    "resp_size_bytes": 65536,
+    "rate_rps_per_flow": 10.0,
+    "concurrency": 4,
+    "service_delay_ms": 5.0
+  },
+  "execution": {
+    "warmup_sec": 5,
+    "duration_sec": 30,
+    "max_requests_per_flow": null,
+    "timeout_ms": 5000,
+    "seed": 42
+  }
+}

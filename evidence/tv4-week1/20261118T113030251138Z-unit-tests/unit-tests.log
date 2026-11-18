@@ -1,0 +1,45 @@
+commit: af83849fc04a70fc0aa2530fc636ac1b1a0ff1b6
+utc: 2026-11-18T11:30:30Z
+host: nhom18-w1 aarch64 boot_id=2a2fd532-0d9a-4069-83bc-ba94de68a743
+command: python3 -m unittest discover -s tests -v
+test_busy_rejected_before_any_install (test_apply.ApplyTests.test_busy_rejected_before_any_install) ... ok
+test_failed_rollback_marks_unknown_not_success (test_apply.ApplyTests.test_failed_rollback_marks_unknown_not_success) ... ok
+test_failed_verification_rolls_back_and_still_fails (test_apply.ApplyTests.test_failed_verification_rolls_back_and_still_fails) ... ok
+test_ignore_preserves_a (test_apply.ApplyTests.test_ignore_preserves_a) ... ok
+test_repeated_apply_is_verified_and_logged (test_apply.ApplyTests.test_repeated_apply_is_verified_and_logged) ... ok
+test_unconfirmed_and_invalid_do_not_apply (test_apply.ApplyTests.test_unconfirmed_and_invalid_do_not_apply) ... ok
+test_iperf3_error_fails (test_measurement.ConverterTests.test_iperf3_error_fails) ... ok
+test_iperf3_excludes_omitted (test_measurement.ConverterTests.test_iperf3_excludes_omitted) ... ok
+test_iperf3_post_omit_interval_flagged (test_measurement.ConverterTests.test_iperf3_post_omit_interval_flagged) ... ok
+test_ping (test_measurement.ConverterTests.test_ping) ... ok
+test_ping_without_summary_fails (test_measurement.ConverterTests.test_ping_without_summary_fails) ... ok
+test_nearest_rank (test_measurement.StatsTests.test_nearest_rank) ... ok
+test_counter_changes_do_not_hide_rule_changes (test_network_model.ModelTests.test_counter_changes_do_not_hide_rule_changes) ... ok
+test_invalid_profile_rejected (test_network_model.ModelTests.test_invalid_profile_rejected) ... ok
+test_profile_paths_and_arp_are_deterministic (test_network_model.ModelTests.test_profile_paths_and_arp_are_deterministic) ... ok
+test_topology_connected_and_exact_size (test_network_model.ModelTests.test_topology_connected_and_exact_size) ... ok
+test_benchmark_rules (test_workload.ConfigTests.test_benchmark_rules) ... ok
+test_clients_as_list_of_strings_rejected (test_workload.ConfigTests.test_clients_as_list_of_strings_rejected) ... ok
+test_http_not_specified_in_v1 (test_workload.ConfigTests.test_http_not_specified_in_v1) ... ok
+test_round_robin_and_offered_load (test_workload.ConfigTests.test_round_robin_and_offered_load) ... ok
+test_server_endpoint_string_rejected (test_workload.ConfigTests.test_server_endpoint_string_rejected) ... ok
+test_shipped_configs_are_valid (test_workload.ConfigTests.test_shipped_configs_are_valid) ... ok
+test_size_below_metadata_rejected (test_workload.ConfigTests.test_size_below_metadata_rejected) ... ok
+test_wrong_ip_or_port_rejected (test_workload.ConfigTests.test_wrong_ip_or_port_rejected) ... ok
+test_lying_frame_bytes_is_rejected (test_workload.FramingTests.test_lying_frame_bytes_is_rejected) ... ok
+test_minimum_sizes_cover_worst_case_metadata (test_workload.FramingTests.test_minimum_sizes_cover_worst_case_metadata) ... ok
+test_roundtrip_exact_size (test_workload.FramingTests.test_roundtrip_exact_size) ... ok
+test_size_too_small_is_an_error (test_workload.FramingTests.test_size_too_small_is_an_error) ... ok
+test_ten_valid_responses (test_workload.LoopbackRunTests.test_ten_valid_responses) ... ok
+test_wrong_id_and_short_response_fail (test_workload.LoopbackRunTests.test_wrong_id_and_short_response_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 9.019s
+
+OK
+{"success": false, "error": "ParseError: iperf3 reported error: unable to connect to server"}
+{"success": true, "summary": {"run_id": "R", "config_id": null, "profile": "A", "src_host": "c1", "dst_host": "a1", "protocol": "TCP", "parallel_streams": 1, "omit_s": 2, "duration_s_requested": 10, "test_start_utc": "2023-11-14T22:13:20.000000Z", "measured_intervals": 10, "timing_suspect_intervals": 0, "measured_bytes_from_intervals": 2500000, "interval_bytes_match_sender": 1, "sender_seconds": 10.0, "sender_bytes": 2500000, "sender_goodput_mbps": 2.0, "tcp_retransmits": 1, "receiver_seconds": 10.0, "receiver_bytes": 2490000, "receiver_goodput_mbps": 1.992, "interval_goodput_min_mbps": 2.0, "interval_goodput_max_mbps": 2.0, "measurement_window_note": "window = sender_seconds/receiver_seconds from iperf3 end.sum_*; interval start/end are relative to the post-omit time base", "metric_note": "iperf3 TCP payload goodput, not interface throughput; includes no headers", "raw_file": "iperf.json", "raw_sha256": "a8bca5c0912e9b066542ff28b9d9e9ab1f280fa1ca1d4027d26307ecdb9a55fd"}}
+{"success": true, "summary": {"run_id": "R", "config_id": null, "profile": "A", "src_host": "c1", "dst_host": "a1", "protocol": "TCP", "parallel_streams": 1, "omit_s": 2, "duration_s_requested": 10, "test_start_utc": "2023-11-14T22:13:20.000000Z", "measured_intervals": 10, "timing_suspect_intervals": 1, "measured_bytes_from_intervals": 2500000, "interval_bytes_match_sender": 1, "sender_seconds": 10.0, "sender_bytes": 2500000, "sender_goodput_mbps": 2.0, "tcp_retransmits": 1, "receiver_seconds": 10.0, "receiver_bytes": 2490000, "receiver_goodput_mbps": 1.992, "interval_goodput_min_mbps": 2.0, "interval_goodput_max_mbps": 2.0, "measurement_window_note": "window = sender_seconds/receiver_seconds from iperf3 end.sum_*; interval start/end are relative to the post-omit time base", "metric_note": "iperf3 TCP payload goodput, not interface throughput; includes no headers", "raw_file": "iperf-omit.json", "raw_sha256": "68ecff7e157a2d86685609d002cfd06119f38e4bab112ea6459d3844faa5bdf5"}}
+{"success": true, "summary": {"run_id": "R", "config_id": null, "profile": "A", "src_host": "c1", "dst_host": "a1", "packets_tx": 4, "packets_rx": 3, "icmp_loss_pct": 25.0, "ping_reported_loss_pct": 25.0, "rtt_sample_count": 3, "icmp_rtt_min_ms": 4.9, "icmp_rtt_mean_ms": 5.333333, "icmp_rtt_p50_ms": 5.1, "icmp_rtt_p95_ms": 6.0, "icmp_rtt_p99_ms": 6.0, "icmp_rtt_max_ms": 6.0, "ping_reported_min_ms": 4.9, "ping_reported_avg_ms": 5.333, "ping_reported_max_ms": 6.0, "ping_reported_mdev_ms": 0.478, "percentile_method": "nearest-rank", "first_sample_utc": "2023-11-14T22:13:20.000100Z", "last_sample_utc": "2023-11-14T22:13:20.400300Z", "raw_file": "ping.txt", "raw_sha256": "5df8a4075093f2798fda8d595be5109d6b4203f094fb57bd838af438fdb0754c"}}
+{"success": false, "error": "ParseError: ping summary line \"N packets transmitted, M received\" not found"}
+exit=0

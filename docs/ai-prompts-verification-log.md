@@ -76,3 +76,41 @@ Log các lần test thất bại được giữ nguyên trong [evidence mạng](
 - N18-001 hoàn thành theo xác nhận người dùng; các task mạng mới chờ TV4 review. Chưa xác minh cài mới Ubuntu trên OS sạch hoặc chạy trên máy thành viên khác; N18-041/N18-045 không được báo hoàn thành.
 
 Hướng dẫn tích hợp và phạm vi: [bàn giao TV2](network-handoff.md). Commit chứa mã hạ tầng: `084189b5d27eeec5fdb2fa6edb13a634316b7c5c`; commit bổ sung tài liệu/minh chứng được lưu trong lịch sử Git khi xuất bản.
+
+## Bổ sung ngày 18/11/2026 — hoàn thiện tuần 1 cho TV2, TV3, TV4
+
+### Yêu cầu và quyết định
+
+- Công cụ: Claude Code (Opus 5.5), phiên làm việc trong worktree nhánh `claude/complete-week1-n18-3fc6c1`.
+- Người dùng dán kế hoạch “Hoàn thiện tuần 1 cho TV2, TV3 và TV4 trong 2 ngày làm việc” và yêu cầu xem xét kỹ, thực hiện các công việc theo checklist. Bản nháp v0 của ba thành viên là PDF trong thư mục “Sản phẩm của 3 thành viên còn lại” (không đưa vào Git).
+- Quyết định giữ trung thực: bài thử chạy trên VM `Nhom18-W1` của TV1 và ghi đúng máy; không coi là TV2/TV3/TV4 tự chạy; không điền thay review của thành viên; N18-002/003/004 chỉ ở **Chờ kiểm tra**, G1 chưa chốt; không sửa evidence cũ của TV1.
+- Cấu hình workload dùng JSON (Python hệ thống Ubuntu không có YAML sẵn).
+
+Các dòng trên tóm tắt yêu cầu và quyết định, không phải bản chép nguyên văn mọi trao đổi.
+
+### Mã do AI hỗ trợ viết
+
+`workload/` (framing, protocol, config, client, server, smoke_test), `measurement/` (week1_probe, to_csv), `qa/check_week1_logs.py`, `tools/` (evidence, stats), `tests/test_workload.py`, `tests/test_measurement.py`.
+
+### Lỗi gặp và cách kiểm chứng bản sửa
+
+| Quan sát thực tế | Điều chỉnh | Kiểm chứng |
+|---|---|---|
+| Bản nháp cho phép size ≥ 128 B; metadata request/response dài nhất cần 474/529 B | Ngưỡng tối thiểu tính trực tiếp từ hàm tạo metadata; encode báo lỗi khi thiếu chỗ | Unit test `test_size_below_metadata_rejected`, `test_size_too_small_is_an_error` |
+| Unit test để lại socket/file chưa đóng (ResourceWarning) | Đóng socket bằng `addCleanup`, đọc CSV bằng context manager | `python3 -W error::ResourceWarning -m unittest` không cảnh báo |
+| Checker so min/mean ping bằng tuyệt đối, KHÔNG ĐẠT trên dữ liệu thật (F1) | Dung sai ±0,005 ms do ping làm tròn từng reply | Lượt kiểm tra lại ĐẠT; ghi metrics-spec §5.3 |
+| iperf3 3.16 báo interval đầu sau `-O` có `seconds≈2,0`, converter tính khoảng đo 11,0 s (F2) | Dùng `end.sum_*`; cột `timing_suspect`; đối chiếu byte với `sum_sent` | Test `test_iperf3_post_omit_interval_flagged`; lượt TV3 rerun và checker ĐẠT |
+
+### Kết quả xác minh
+
+- macOS: 30 unit test OK (gồm loopback client/server và 2 ca lỗi). VM: 30 unit test OK, log tại `evidence/tv4-week1/20261118T113030251138Z-unit-tests/`.
+- TV2: 2 lượt `smoke_test.py --negative` PASS (10/10 OK, 3/3 ca âm tính đúng mã). TV3: 2 lượt `week1_probe.py` PASS (lượt đầu có lỗi CSV F2, giữ nguyên). TV4: checker lần đầu 22/24, sau sửa 25/25.
+- `source-manifest.json` của 4 lượt TV2/TV3 khớp Git blob của commit tương ứng (`6d7df69`, `af83849`).
+- Tracker: chỉ đổi 9 ô K/L/N hàng N18-002…004 sheet `Công việc` bằng sửa XML trực tiếp; các phần khác của file xlsx giữ nguyên byte (xem commit).
+- Chưa làm: chạy trên máy thành viên khác; review/phê duyệt của TV1–TV3; tạo issue/board trên GitHub.
+
+### Cập nhật trạng thái sau review (18/11/2026)
+
+- Người dùng (nhóm trưởng TV1) xác nhận mọi review tuần 1 đã đạt: TV3 review N18-002, TV1 review N18-003, TV2 review N18-004, TV1 phê duyệt phạm vi/rubric; TV4 review 9 task hạ tầng của TV1. Review được thực hiện ngoài repository; phiên AI chỉ ghi nhận theo xác nhận này, không tự điền thay chữ ký.
+- Tracker: 12 task `Chờ kiểm tra` → `Hoàn thành`; E01, E02, E07 → `Hoàn thành`; giá trị tổng hợp của sheet `Tổng quan` được tính lại từ dữ liệu (13/48 P0) và bật `fullCalcOnLoad` để Excel/LibreOffice tính lại công thức khi mở. Kiểm tra lại bằng so sánh XML: chỉ các ô trạng thái/ghi chú/cờ hoàn thành và giá trị cache của công thức thay đổi; số ô mỗi sheet không đổi.
+- Việc chạy lại bài thử trên máy từng thành viên vẫn để mở, thuộc kiểm tra tái lập (E09).

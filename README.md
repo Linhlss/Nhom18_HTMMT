@@ -14,6 +14,25 @@ Prototype giám sát, đánh giá cấu hình mạng Data Center Spine–Leaf ch
 - [AI Prompts & Verification Log](docs/ai-prompts-verification-log.md)
 - [Bộ đề cương gốc](README_BAT_DAU.md)
 
+## Tuần 1 — đặc tả và bài thử của TV2, TV3, TV4
+
+| Task | Tài liệu | Mã | Minh chứng | Trạng thái |
+|---|---|---|---|---|
+| N18-002 (TV2) | [workload-spec.md](docs/workload-spec.md) | [workload/](workload/) | [evidence/tv2-week1](evidence/tv2-week1/README.md) | Hoàn thành (TV3 đã review) |
+| N18-003 (TV3) | [metrics-spec.md](docs/metrics-spec.md) | [measurement/](measurement/) | [evidence/tv3-week1](evidence/tv3-week1/README.md) | Hoàn thành (TV1 đã review) |
+| N18-004 (TV4) | [scope-rubric.md](docs/scope-rubric.md) | [qa/](qa/) | [evidence/tv4-week1](evidence/tv4-week1/README.md) | Hoàn thành (TV2 đã review, TV1 phê duyệt) |
+
+Biên bản review: [qa/week1-review.md](qa/week1-review.md). Review chéo đã đạt và **G1 đã chốt** theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026. Bài thử tuần 1 chạy trên VM của TV1; lệnh để mỗi thành viên chạy lại trên máy của mình:
+
+```bash
+python3 -m unittest discover -s tests -v
+sudo /usr/bin/python3 control/networkctl.py start --profile A
+sudo /usr/bin/python3 workload/smoke_test.py --label tv2-smoke --negative
+sudo /usr/bin/python3 measurement/week1_probe.py --label tv3-probe
+sudo /usr/bin/python3 control/networkctl.py stop
+python3 qa/check_week1_logs.py --tv2 evidence/tv2-week1/<run> --tv3 evidence/tv3-week1/<run> --out evidence/tv4-week1/<UTC>-tv4-logcheck
+```
+
 Trong **Ubuntu 24.04 VM** đúng kiến trúc:
 
 ```bash
@@ -37,6 +56,6 @@ sudo /usr/bin/python3 control/networkctl.py stop
 sudo /usr/bin/python3 scripts/verify-network.py --label tv2-local
 ```
 
-N18-001 đã được TV4 nghiệm thu theo xác nhận của người dùng ngày 16/11/2026. Các phần mạng mới có bằng chứng kiểm thử được để **Chờ kiểm tra**; giữ TV4 làm reviewer. Gate G1 và các gate khác vẫn phụ thuộc đầu ra tương ứng của cả nhóm. [Bài thử tuần 1](evidence/week1/README.md) được giữ nguyên log gốc.
+N18-001 đã được TV4 nghiệm thu theo xác nhận của người dùng ngày 16/11/2026. Các task hạ tầng N18-005/009/013/017/021/025/029/033/037 đã được TV4 review và chuyển **Hoàn thành** theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026; N18-041 vẫn **Đang làm**. G1 đã chốt; các gate sau vẫn phụ thuộc đầu ra tương ứng của cả nhóm. [Bài thử tuần 1](evidence/week1/README.md) được giữ nguyên log gốc.
 
 VM, image, seed, SSH key và runtime không nằm trong Git. Bản kiểm thử trên VM TV1 không thay thế việc TV2 tự chạy lại trên máy của mình. Các phép đo iperf3 trong evidence là kiểm tra hạ tầng, chưa phải kết quả benchmark AI inference.

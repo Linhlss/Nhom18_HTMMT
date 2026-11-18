@@ -1,0 +1,42 @@
+{
+  "case": "neg-no-server",
+  "run_id": "20261118T113018044375Z-tv2-smoke-rerun-neg-no-server",
+  "started_utc": "2026-11-18T11:30:28.057786Z",
+  "name": "neg-no-server",
+  "server_fault": "none",
+  "start_server": false,
+  "expect_client_rc": 3,
+  "expect_server_rc": null,
+  "client_command": [
+    "/home/ubuntu/Nhom18_week1_tv234/control/networkctl.py",
+    "exec",
+    "--timeout",
+    "60",
+    "c1",
+    "--",
+    "/usr/bin/python3",
+    "workload/client.py",
+    "--config",
+    "workload/configs/smoke-c1-a1.json",
+    "--client-name",
+    "c1",
+    "--run-id",
+    "20261118T113018044375Z-tv2-smoke-rerun-neg-no-server",
+    "--profile",
+    "A",
+    "--out",
+    "/home/ubuntu/Nhom18_week1_tv234/evidence/tv2-week1/20261118T113018044375Z-tv2-smoke-rerun/neg-no-server/client",
+    "--connect-retry-sec",
+    "2"
+  ],
+  "client_exec": {
+    "returncode": 3,
+    "stdout": "{\"run_id\": \"20261118T113018044375Z-tv2-smoke-rerun-neg-no-server\", \"requests_expected\": 10, \"status_counts\": {\"CONN_ERROR\": 10}, \"exit_code\": 3}\n",
+    "stderr": "",
+    "success": false
+  },
+  "client_returncode": 3,
+  "server_returncode": null,
+  "passed": true,
+  "finished_utc": "2026-11-18T11:30:30.233556Z"
+}

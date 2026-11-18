@@ -1,6 +1,6 @@
 # NHÓM 18 — BỘ TÀI LIỆU GỐC TRIỂN KHAI 12 TUẦN
 
-**Cập nhật bàn giao TV1:** người dùng xác nhận TV4 đã nghiệm thu N18-001 ngày 16/11/2026. Đã bổ sung mạng 10 node, profile A/B và Apply có xác nhận; các task mới giữ **Chờ kiểm tra** sau kiểm thử kỹ thuật. TV2 xem [hướng dẫn tích hợp](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md) và [README chính](README.md).
+**Cập nhật bàn giao TV1:** người dùng xác nhận TV4 đã nghiệm thu N18-001 ngày 16/11/2026. Đã bổ sung mạng 10 node, profile A/B và Apply có xác nhận; các task hạ tầng đã được TV4 review, chuyển **Hoàn thành** theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026; N18-002…004 tuần 1 cũng đã hoàn thành và G1 đã chốt. TV2 xem [hướng dẫn tích hợp](docs/network-handoff.md), [minh chứng mạng](evidence/network/README.md) và [README chính](README.md).
 
 ## Bắt đầu từ đâu?
 
