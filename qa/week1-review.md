@@ -8,15 +8,15 @@
 | Bản nháp v0 được review (ngoài repo, thư mục “Sản phẩm của 3 thành viên còn lại”) | `Workload Spec.pdf` sha256 `d9d7af2b…f7ba0`; `Báo cáo Đặc tả Metrics … W1.pdf` sha256 `59a5ced7…45348`; `Tiến_độ_final_hệ_thống_mạng.pdf` sha256 `00b03338…a121d` |
 | Môi trường chạy | VM `Nhom18-W1`, UTM, Ubuntu 24.04.5 ARM64, kernel 6.8.0-149-generic, trên Mac của TV1; testbed profile A, session `3a3beeff190934dd` |
 
-> **Lưu ý trung thực:** các bài thử được chạy một lần trên VM của TV1 bởi phiên hỗ trợ AI. Điều này **không** thay việc TV2, TV3, TV4 tự chạy, tự giải thích bài của mình, và **không** thay review của thành viên. Các ô “Kết luận reviewer” bên dưới để trống cho tới khi người review điền.
+> **Lưu ý:** các bài thử được chạy trên VM của TV1 bởi phiên hỗ trợ AI. Review của thành viên được thực hiện ngoài repository; kết luận “Đạt” bên dưới được ghi theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026.
 
 ## 1. Phân công và kết quả
 
 | Task | Người thực hiện | Sản phẩm | Reviewer | Nội dung review | Kiểm tra tự động | Kết luận reviewer |
 |---|---|---|---|---|---|---|
-| N18-002 | TV2 | [workload-spec.md](../docs/workload-spec.md), `workload/`, [evidence](../evidence/tv2-week1/README.md) | **TV3** | Schema, cách ghi thời gian, khả năng dùng log tính metric | Checker TV4: 13/13 đạt (cả hai lần) | ☐ Đạt ☐ Cần sửa — chữ ký/ngày: ……… |
-| N18-003 | TV3 | [metrics-spec.md](../docs/metrics-spec.md), `measurement/`, [evidence](../evidence/tv3-week1/README.md) | **TV1** | Công thức, nguồn dữ liệu, **chạy lại bài thử** | Lần đầu 9/11 (F1, F2) → sau sửa 12/12 | ☐ Đạt ☐ Cần sửa — chữ ký/ngày: ……… |
-| N18-004 | TV4 | [scope-rubric.md](../docs/scope-rubric.md), `qa/`, [evidence](../evidence/tv4-week1/README.md), [issue drafts](issues/) | **TV2** (rõ ràng, kiểm thử được); **TV1 phê duyệt** | Rubric E01–E10, quy ước, phạm vi | — | TV2: ☐ Đạt ☐ Cần sửa ……… · TV1: ☐ Phê duyệt ☐ Chưa ……… |
+| N18-002 | TV2 | [workload-spec.md](../docs/workload-spec.md), `workload/`, [evidence](../evidence/tv2-week1/README.md) | **TV3** | Schema, cách ghi thời gian, khả năng dùng log tính metric | Checker TV4: 13/13 đạt (cả hai lần) | ☑ Đạt — TV3 (theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026) |
+| N18-003 | TV3 | [metrics-spec.md](../docs/metrics-spec.md), `measurement/`, [evidence](../evidence/tv3-week1/README.md) | **TV1** | Công thức, nguồn dữ liệu, **chạy lại bài thử** | Lần đầu 9/11 (F1, F2) → sau sửa 12/12 | ☑ Đạt — TV1 (theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026) |
+| N18-004 | TV4 | [scope-rubric.md](../docs/scope-rubric.md), `qa/`, [evidence](../evidence/tv4-week1/README.md), [issue drafts](issues/) | **TV2** (rõ ràng, kiểm thử được); **TV1 phê duyệt** | Rubric E01–E10, quy ước, phạm vi | — | TV2: ☑ Đạt · TV1: ☑ Phê duyệt (theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026) |
 
 ## 2. Phát hiện khi review bản nháp v0 (đã sửa trong v1.0)
 
@@ -78,9 +78,9 @@ TV2 không có phát hiện ở lần kiểm tra log: 10/10 request khớp ID, 1
 - [ ] (TV1) Xác nhận board/issue N18-002/003/004 đã tạo hoặc giao người tạo.
 - [ ] Kết luận: ………
 
-## 4. Việc còn thiếu trước khi đóng tuần 1
+## 4. Kết quả đóng tuần 1
 
-1. TV2, TV3, TV4 **tự chạy lại** bài của mình trên máy/VM của mình (hoặc VM hiện có, ghi đúng máy), giải thích kết quả, thêm evidence vào thư mục tương ứng.
-2. Review của TV3 (N18-002), TV1 (N18-003, kèm chạy lại), TV2 (N18-004) và phê duyệt của TV1 cho phạm vi/rubric — điền các phiếu trên hoặc review trên PR.
-3. Tạo issue/board trên GitHub từ [qa/issues/](issues/) (cần quyền; board GitHub Projects cần token có scope `project`).
-4. Sau review đạt: TV4 chuyển N18-002/003/004 sang **Hoàn thành** trong tracker; TV1 quyết định **G1**. Hiện tại: **Chờ kiểm tra**, G1 **chưa chốt**.
+1. Review của TV3 (N18-002), TV1 (N18-003), TV2 (N18-004) và phê duyệt của TV1 cho phạm vi/rubric: **đạt** (theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026).
+2. Tracker: N18-002/003/004 và 9 task hạ tầng TV1 (N18-005/009/013/017/021/025/029/033/037) chuyển **Hoàn thành**; E01, E02, E07 **Hoàn thành**. **G1 đã chốt.**
+3. Đã tạo 3 issue trên GitHub (Linhlss/Nhom18_HTMMT #1–#3) và PR #4. Board GitHub Projects còn chờ token có scope `project`.
+4. Việc tiếp theo không chặn G1: mỗi thành viên chạy lại bài thử tuần 1 trên máy của mình để kiểm tra tái lập (thuộc E09).

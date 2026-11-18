@@ -108,3 +108,9 @@ Các dòng trên tóm tắt yêu cầu và quyết định, không phải bản 
 - `source-manifest.json` của 4 lượt TV2/TV3 khớp Git blob của commit tương ứng (`6d7df69`, `af83849`).
 - Tracker: chỉ đổi 9 ô K/L/N hàng N18-002…004 sheet `Công việc` bằng sửa XML trực tiếp; các phần khác của file xlsx giữ nguyên byte (xem commit).
 - Chưa làm: chạy trên máy thành viên khác; review/phê duyệt của TV1–TV3; tạo issue/board trên GitHub.
+
+### Cập nhật trạng thái sau review (18/11/2026)
+
+- Người dùng (nhóm trưởng TV1) xác nhận mọi review tuần 1 đã đạt: TV3 review N18-002, TV1 review N18-003, TV2 review N18-004, TV1 phê duyệt phạm vi/rubric; TV4 review 9 task hạ tầng của TV1. Review được thực hiện ngoài repository; phiên AI chỉ ghi nhận theo xác nhận này, không tự điền thay chữ ký.
+- Tracker: 12 task `Chờ kiểm tra` → `Hoàn thành`; E01, E02, E07 → `Hoàn thành`; giá trị tổng hợp của sheet `Tổng quan` được tính lại từ dữ liệu (13/48 P0) và bật `fullCalcOnLoad` để Excel/LibreOffice tính lại công thức khi mở. Kiểm tra lại bằng so sánh XML: chỉ các ô trạng thái/ghi chú/cờ hoàn thành và giá trị cache của công thức thay đổi; số ô mỗi sheet không đổi.
+- Việc chạy lại bài thử trên máy từng thành viên vẫn để mở, thuộc kiểm tra tái lập (E09).

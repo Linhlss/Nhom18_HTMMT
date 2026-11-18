@@ -6,7 +6,7 @@
 | Người phụ trách (DRI) | TV3 |
 | Người review | TV1 (công thức, nguồn dữ liệu, chạy lại bài thử) |
 | Phiên bản | **v1.0**, 18/11/2026. Thay bản nháp v0 `Báo cáo Đặc tả Metrics … W1.pdf` (ngoài repo); thay đổi ở [§11](#11-thay-đổi-so-với-bản-nháp-v0) |
-| Trạng thái | **Chờ kiểm tra** — chờ TV1 review/chạy lại và TV3 tự chạy lại |
+| Trạng thái | **Hoàn thành** — TV1 đã review (theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026) |
 | Mã nguồn | [`measurement/week1_probe.py`](../measurement/week1_probe.py), [`measurement/to_csv.py`](../measurement/to_csv.py), [`tools/stats.py`](../tools/stats.py) |
 | Minh chứng | [`evidence/tv3-week1/`](../evidence/tv3-week1/README.md) |
 | Liên quan | [Đặc tả workload](workload-spec.md) (định danh, log ứng dụng), [Bàn giao mạng TV1](network-handoff.md) (capacity link) |

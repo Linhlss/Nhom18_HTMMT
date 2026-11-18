@@ -7,7 +7,7 @@
 | Người review | TV2 (tính rõ ràng, khả năng kiểm thử) |
 | Phê duyệt | **TV1** (phạm vi và rubric) |
 | Phiên bản | **v1.0**, 18/11/2026. Thay bản nháp v0 `Tiến_độ_final_hệ_thống_mạng.pdf` (ngoài repo); thay đổi ở [§9](#9-thay-đổi-so-với-bản-nháp-v0) |
-| Trạng thái | **Chờ kiểm tra** — chờ TV2 review và TV1 phê duyệt |
+| Trạng thái | **Hoàn thành** — TV2 đã review, TV1 phê duyệt (theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026) |
 | Nguồn gốc | [Đề cương chi tiết](../Nhom18_De_cuong_chi_tiet.md) (source of truth), [Phân công 12 tuần](../Nhom18_Phan_cong_Checklist_12_tuan.md) |
 
 ## 1. Bối cảnh minh họa — **giả định**
@@ -58,17 +58,17 @@ Thay đổi phạm vi theo đề cương C.2: `yêu cầu → lý do → ảnh h
 
 ## 4. Rubric nghiệm thu E01–E10 (cho cả dự án)
 
-Rubric áp dụng toàn dự án; **không** yêu cầu đạt hết ở tuần 1. Chủ trì và người review khớp sheet `Nghiệm thu` của tracker. Trạng thái dưới đây là trạng thái **thực tế** ngày 18/11/2026.
+Rubric áp dụng toàn dự án; **không** yêu cầu đạt hết ở tuần 1. Chủ trì và người review khớp sheet `Nghiệm thu` của tracker. Trạng thái dưới đây là trạng thái **thực tế** sau review tuần 1.
 
 | Mã | Tiêu chí | Chủ trì | Bằng chứng bắt buộc | Review | Điều kiện đạt | Mốc | Trạng thái |
 |---|---|---|---|---|---|---|---|
-| **E01** | Topology 10 node, routing đúng; gateway/firewall không nghẽn ngoài ý muốn | TV1 | `topology/`, `network-state.json`, `tc.json`, ping 8 hướng, kết quả verify | TV4 | Đủ 10 node/10 link; rate từng interface đúng; 8 hướng client↔server 0 % loss; firewall chỉ mở 8000, 5201–5208 | G2/W3 | Chờ kiểm tra |
-| **E02** | Profile A/B đi khác nhau, có counter/trace | TV1 | PCAP + delta counter từng spine cho A và B, ≥ 3 lượt mỗi profile | TV4 | A: chỉ Spine 1 có lưu lượng; B: c1 qua Spine 1, c2 qua Spine 2; gọi đúng tên flow-splitting | G4/W6 | Chờ kiểm tra |
+| **E01** | Topology 10 node, routing đúng; gateway/firewall không nghẽn ngoài ý muốn | TV1 | `topology/`, `network-state.json`, `tc.json`, ping 8 hướng, kết quả verify | TV4 | Đủ 10 node/10 link; rate từng interface đúng; 8 hướng client↔server 0 % loss; firewall chỉ mở 8000, 5201–5208 | G2/W3 | Hoàn thành |
+| **E02** | Profile A/B đi khác nhau, có counter/trace | TV1 | PCAP + delta counter từng spine cho A và B, ≥ 3 lượt mỗi profile | TV4 | A: chỉ Spine 1 có lưu lượng; B: c1 qua Spine 1, c2 qua Spine 2; gọi đúng tên flow-splitting | G4/W6 | Hoàn thành |
 | **E03** | Client/server request/response theo tham số, 1/2/4/8 flow từ 2 client | TV2 | `workload/`, config đã validate, `client-requests.csv`, `server-events.jsonl`, summary có `load_sustained` | TV4 | Mỗi mức tải: mọi request mong đợi có status; ID/size khớp client–server; rate thực đạt được đánh dấu; mã thoát đúng | G3/W4 | Chưa làm (tuần 1 mới có bài thử 1 flow) |
 | **E04** | RTT, throughput, per-link utilization có raw, đơn vị, cửa sổ; `d_trans = L/R` minh bạch | TV3 | Raw ping/iperf3/counter, CSV sinh bằng mã, `metrics-spec.md` | TV1 | Mọi metric có công thức + đơn vị + cửa sổ; CSV đối chiếu được raw (sha256); không có 0 thay dữ liệu thiếu | W6 | Chưa làm (tuần 1 có bài đo chẩn đoán) |
 | **E05** | Detect đúng link; test bão hòa và test tải thấp | TV3 | `monitoring/detect.py`, `tests/test_detection.py`, log alert | TV4 | Ca quá tải chỉ ra đúng link; ca tải thấp không cảnh báo; rule/threshold công bố trước khi đo chính | W7 | Chưa làm |
 | **E06** | Recommend theo rule minh bạch, có lý do | TV3 | `monitoring/recommend.py`, test rule | TV1 | Mỗi khuyến nghị có điều kiện đo được + lý do; không hứa cải thiện trước khi Verify; không khuyến nghị khi cả hai đường bão hòa | W8 | Chưa làm |
-| **E07** | Apply có xác nhận, Ignore không đổi, log old/new | TV1 | `apply.jsonl`, flow dump trước/sau, test Ignore/thiếu confirm/busy/lỗi | TV4 | Thiếu confirm hoặc Ignore → flow table không đổi; Apply đổi đúng preset, verify lại đường đi, rollback khi lỗi | G5/W9 | Chờ kiểm tra |
+| **E07** | Apply có xác nhận, Ignore không đổi, log old/new | TV1 | `apply.jsonl`, flow dump trước/sau, test Ignore/thiếu confirm/busy/lỗi | TV4 | Thiếu confirm hoặc Ignore → flow table không đổi; Apply đổi đúng preset, verify lại đường đi, rollback khi lỗi | G5/W9 | Hoàn thành |
 | **E08** | Compare A/B cùng tải, ≥ 3 lần, thống kê có nguồn | TV3 | `analysis/compare.py`, `results/summary.csv`, raw từng lượt | TV1 | Chỉ ghép cặp cùng `config_id` và `load_sustained=true`; % delta + độ dao động; nêu cả trường hợp không cải thiện | G6/W10 | Chưa làm |
 | **E09** | Tái lập từ VM sạch bằng README + script | TV1 | README, setup log, kết quả chạy trên máy thành viên khác | TV4 | Người khác clone, setup, chạy verify + workload + đo theo README không cần thao tác ngầm; số liệu không chỉnh tay | G7/W12 | Đang làm |
 | **E10** | Báo cáo đúng 2 chương; protocol/OSI-TCP/IP, metric, AI networking; AI log nếu dùng AI | TV4 | `report/`, `docs/ai-prompts-verification-log.md` | TV1 | Đủ 1.1–1.5 và 2.1–2.5; số liệu truy được tới run_id; trích dẫn có nguồn; AI log có prompt/lỗi/kiểm chứng | G7/W12 | Chưa làm |
@@ -164,16 +164,16 @@ Mỗi lượt bắt buộc có: `result.json` (thành công/thất bại, kiểm
 - Mỗi task có một issue `N18-0XX — <tên>` gồm checklist nghiệm thu, link sản phẩm, reviewer; nhãn `week-1`, `TV2|TV3|TV4`, `status:*`. Phát hiện khi review ghi thành comment/issue riêng, khi đóng phải dẫn commit sửa và kết quả kiểm tra lại.
 - Board GitHub Projects gồm cột theo §6.6. Bản nháp ba issue tuần 1 ở [`qa/issues/`](../qa/issues/).
 
-## 7. Điều kiện đóng tuần 1 và trạng thái hiện tại
+## 7. Điều kiện đóng tuần 1 và kết quả
 
 | Điều kiện | Trạng thái 18/11/2026 |
 |---|---|
-| Đủ tài liệu đã sửa và dữ liệu bài thử thật của TV2, TV3, TV4 | Đã có; bài thử chạy trên VM TV1 — mỗi thành viên **vẫn phải tự chạy và giải thích** |
-| Tài liệu TV2–TV3 thống nhất schema và ý nghĩa metric | Đã đối chiếu: cùng `run_id/config_id/profile`, cùng tên `app_response_ms/server_proc_ms/network_residual_est_ms`; checker TV4 xác nhận CSV đủ cột |
-| Reviewer xác nhận bằng biên bản/PR; lỗi bắt buộc đã sửa và kiểm tra lại | Phát hiện F1/F2 đã sửa và kiểm tra lại; **chữ ký review TV3, TV1, TV2 còn trống** |
-| TV1 phê duyệt phạm vi/rubric của TV4 | **Chưa** |
-| Tracker phản ánh bằng chứng | N18-002/003/004 → `Chờ kiểm tra`; chỉ chuyển `Hoàn thành` sau review đạt |
-| G1 | **Chưa chốt** — TV1 chốt khi N18-001…004 đều đạt |
+| Đủ tài liệu đã sửa và dữ liệu bài thử thật của TV2, TV3, TV4 | Đạt; bài thử chạy trên VM TV1, mỗi thành viên chạy lại trên máy mình để kiểm tra tái lập |
+| Tài liệu TV2–TV3 thống nhất schema và ý nghĩa metric | Đạt: cùng `run_id/config_id/profile`, cùng tên `app_response_ms/server_proc_ms/network_residual_est_ms`; checker TV4 xác nhận CSV đủ cột |
+| Reviewer xác nhận bằng biên bản/PR; lỗi bắt buộc đã sửa và kiểm tra lại | Đạt: F1/F2 đã sửa và kiểm tra lại; TV3, TV1, TV2 đã review (theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026) |
+| TV1 phê duyệt phạm vi/rubric của TV4 | **Đã phê duyệt** |
+| Tracker phản ánh bằng chứng | N18-002/003/004 → `Hoàn thành` |
+| G1 | **Đã chốt** |
 
 Biên bản chi tiết: [qa/week1-review.md](../qa/week1-review.md).
 

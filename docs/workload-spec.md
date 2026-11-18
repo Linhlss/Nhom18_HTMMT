@@ -6,7 +6,7 @@
 | Người phụ trách (DRI) | TV2 |
 | Người review | TV3 (schema, cách ghi thời gian, khả năng dùng log để tính metric) |
 | Phiên bản | **v1.0**, 18/11/2026. Thay bản nháp v0 `Workload Spec.pdf` (ngoài repo); thay đổi ở [§10](#10-thay-đổi-so-với-bản-nháp-v0) |
-| Trạng thái | **Chờ kiểm tra** — chờ TV3 review và TV2 tự chạy lại trên máy của mình |
+| Trạng thái | **Hoàn thành** — TV3 đã review (theo xác nhận của nhóm trưởng TV1 ngày 18/11/2026) |
 | Mã nguồn | [`workload/`](../workload/), cấu hình mẫu [`workload/configs/`](../workload/configs/) |
 | Minh chứng | [`evidence/tv2-week1/`](../evidence/tv2-week1/README.md) |
 | Liên quan | [Đặc tả metric](metrics-spec.md), [Phạm vi & rubric](scope-rubric.md), [Bàn giao mạng TV1](network-handoff.md) |
@@ -238,7 +238,7 @@ Trên macOS/Windows chỉ chạy được unit test và chế độ loopback tro
 
 ## 8. Bài thử khởi động tuần 1
 
-**Môi trường thực tế:** VM `Nhom18-W1` (UTM, Ubuntu 24.04 ARM64, Python 3.12.3) trên máy Mac của TV1; testbed 10 node profile A. Lượt chạy do phiên hỗ trợ AI thực hiện theo yêu cầu của người dùng, **không phải** TV2 chạy trên máy của TV2. TV2 cần tự chạy lại và giải thích kết quả trước khi task được đóng.
+**Môi trường thực tế:** VM `Nhom18-W1` (UTM, Ubuntu 24.04 ARM64, Python 3.12.3) trên máy Mac của TV1; testbed 10 node profile A. Lượt chạy do phiên hỗ trợ AI thực hiện theo yêu cầu của người dùng, **không phải** TV2 chạy trên máy của TV2. TV2 nên tự chạy lại trên máy của mình để kiểm tra tính tái lập.
 
 | Lượt (run_id) | Commit mã | Kết quả |
 |---|---|---|
