@@ -2,6 +2,8 @@
 
 > **🚨 ƯU TIÊN NGAY — TV1 (NHÓM TRƯỞNG), 19–22/11/2026:** [MỞ CHECKLIST P0 BÀN GIAO CHO CODEX / CLAUDE](docs/TV1_P0_UU_TIEN_BAN_GIAO_19_22_11_2026.md). Thực hiện **P0-01 → P0-02 trước**, sau đó TV2/TV3 tự chạy kiểm chứng (P0-03) và nhóm tích hợp pilot (P0-04). **Đây là việc cần làm, chưa được nghiệm thu.** Cả hai agent đọc [AGENTS.md](AGENTS.md) / [CLAUDE.md](CLAUDE.md); không viết lại hạ tầng đã có và không làm thay phần TV2–TV4. Hạn ưu tiên: **gói code/tài liệu TV1 ngày 20/11; pilot chung 22/11**.
 
+**Issue theo thứ tự:** [#5 — Contract & inventory](https://github.com/Linhlss/Nhom18_HTMMT/issues/5) → [#6 — Verify/handoff](https://github.com/Linhlss/Nhom18_HTMMT/issues/6) → [#7 — TV2/TV3 tự chạy](https://github.com/Linhlss/Nhom18_HTMMT/issues/7) → [#8 — Pilot A/B chung](https://github.com/Linhlss/Nhom18_HTMMT/issues/8). Codex/Claude **chỉ nhận #5 trước**, không tự đánh dấu #7–#8 DONE.
+
 Prototype giám sát, đánh giá cấu hình mạng Data Center Spine–Leaf cho lưu lượng AI inference giả lập, dùng Mininet/Open vSwitch trong Ubuntu VM.
 
 ## Gói hạ tầng TV1 → TV2
