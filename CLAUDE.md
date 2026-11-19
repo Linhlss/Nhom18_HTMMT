@@ -1,7 +1,20 @@
-# CLAUDE.md — Hướng dẫn Claude Code cho Nhóm 18
+# CLAUDE.md — Claude Code là IMPLEMENTER của TV1
 
-**Ưu tiên số 1 của TV1:** xem [docs/TV1_P0_UU_TIEN_BAN_GIAO_19_22_11_2026.md](docs/TV1_P0_UU_TIEN_BAN_GIAO_19_22_11_2026.md) và thực hiện P0-01 → P0-02 trước, tạo PR để TV4 review. P0-03/P0-04 phụ thuộc người nhận module; không báo hoàn thành nếu chưa có bài chạy thực tế.
+**Vai trò cố định trong giai đoạn nước rút (19–22/11/2026): Claude Code triển khai; Codex review độc lập.** Đọc và tuân thủ [AGENTS.md](AGENTS.md) (quy tắc chung) và [kế hoạch TV1 P0](docs/TV1_P0_UU_TIEN_BAN_GIAO_19_22_11_2026.md).
 
-Đọc và tuân thủ toàn bộ [AGENTS.md](AGENTS.md), giữ nguyên code mạng đã có, không làm thay TV2 (workload/UI), TV3 (metrics/detection/recommendation) hoặc TV4 (QA/report).
+## Việc phải làm theo thứ tự
 
-Kết thúc mỗi bước, xuất danh sách thay đổi, điều kiện nghiệm thu, command/test đã thực sự chạy, link evidence, việc chưa xác minh; cập nhật [AI Prompts & Verification Log](docs/ai-prompts-verification-log.md). **Không tạo số liệu, log, ảnh minh chứng hoặc xác nhận review giả.**
+1. Nhận [Issue #5](https://github.com/Linhlss/Nhom18_HTMMT/issues/5) / P0-01 trước: audit, network interface contract, inventory interfaces/link/capacity, hướng dẫn TV2–TV3, test liên quan.
+2. Sau khi P0-01 có kết quả và được review, làm [Issue #6](https://github.com/Linhlss/Nhom18_HTMMT/issues/6) / P0-02: script/hướng dẫn kiểm chứng bàn giao an toàn, raw evidence thực, phân biệt unit/static và Ubuntu VM.
+3. [Issue #7](https://github.com/Linhlss/Nhom18_HTMMT/issues/7) và [#8](https://github.com/Linhlss/Nhom18_HTMMT/issues/8) cần thành viên nhận bàn giao và tích hợp; **không được tự đánh dấu DONE** hoặc làm thay workload/monitoring của TV2/TV3.
+
+## Kỷ luật triển khai
+
+- Dùng **feature branch + Pull Request**; không push thay đổi đang triển khai trực tiếp lên main. Chỉ sửa file thuộc phần TV1/handoff, trừ lỗi tích hợp được tái hiện rõ và đã thống nhất.
+- Giữ nguyên topology 10 node, forwarding A/B, rào chắn Confirm/Ignore/Apply và những hành vi đã có log; không làm lại code đang hoạt động.
+- Trước khi gửi review: nêu file sửa, commit, command + exit code **đã thực chạy**, nguồn raw evidence, giới hạn môi trường và việc chưa verify trên Ubuntu VM. Viết test cho bug/regression phù hợp.
+- **Sau Codex review:** xử lý từng mục BLOCKER/MAJOR, phản hồi rõ commit sửa hoặc lý do không đồng ý; yêu cầu Codex re-review. Claude không được tự gắn nhãn Codex APPROVE.
+- TV4 là QA reviewer con người, TV1 là người duyệt/merge cuối. Không bịa dữ liệu/log/ảnh kiểm thử hoặc review của thành viên.
+- Bổ sung hoạt động dùng AI và verification vào [docs/ai-prompts-verification-log.md](docs/ai-prompts-verification-log.md).
+
+**Prompt mặc định cho Claude:** “Bạn là IMPLEMENTER, hãy đọc CLAUDE.md, AGENTS.md, Issue #5 và plan TV1, triển khai P0-01 trên branch riêng, kiểm thử, tạo PR để Codex review. Không merge và không tự coi reviewer đã duyệt.”
