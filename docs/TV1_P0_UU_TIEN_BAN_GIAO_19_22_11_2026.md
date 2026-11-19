@@ -1,6 +1,6 @@
 # TV1 — P0: Hoàn tất bàn giao hạ tầng trước để TV2/TV3/TV4 tiếp tục (19–22/11/2026)
 
-> **ĐỌC ĐẦU TIÊN — KẾ HOẠCH TRIỂN KHAI CHO CODEX / CLAUDE CODE.** Đây là **danh sách công việc CHƯA NGHIỆM THU**, không phải thông báo đã hoàn thành. TV1 là nhóm trưởng và chủ trì; TV4 kiểm thử chéo. Thời hạn môn học còn 3–5 tuần, ưu tiên một vòng prototype hoạt động hơn tính năng mở rộng.
+> **ĐỌC ĐẦU TIÊN — CLAUDE CODE TRIỂN KHAI, CODEX REVIEW ĐỘC LẬP.** Đây là **danh sách công việc CHƯA NGHIỆM THU**, không phải thông báo đã hoàn thành. TV1 là nhóm trưởng và chủ trì; TV4 kiểm thử chéo. Thời hạn môn học còn 3–5 tuần, ưu tiên một vòng prototype hoạt động hơn tính năng mở rộng.
 
 ## 0. Audit những gì ĐÃ CÓ — KHÔNG LÀM LẠI
 
@@ -88,19 +88,33 @@ Trên nhánh main hiện có:
 - Sau 22/11: TV1 chỉ nhận networking bug từ pilot, duyệt gate và hỗ trợ reviewer. TV2 chạy workload + dashboard; TV3 collector/detect/recommend; TV4 QA/báo cáo song song.
 - Nếu chỉ còn 3 tuần: bỏ packet animation phức tạp, UI trang trí, ECMP mới, tính năng ngoài P0; hoàn thành Detect→Recommend→Confirm→Apply→Verify→Compare và dữ liệu thật trên VM trước.
 
-## 7. Hướng dẫn giao việc cho Codex / Claude Code (thực hiện theo thứ tự)
+## 7. Quy trình hai AI: Claude implementer → Codex reviewer
 
-**Vai trò AI agent:** lập trình/tài liệu/test phục vụ **phần TV1**. Không tự cập nhật trạng thái task sang Hoàn thành trừ khi có log và người review theo checklist; không đóng gate chỉ nhờ README.
+**Phân công cố định:** Claude Code là tác giả code/test/tài liệu của TV1; Codex là người review độc lập trên PR, **không sửa code, không tự merge**. TV4 QA và TV1 chốt nghiệm thu/merge. Giữ nguyên thứ tự P0-01 (#5) → P0-02 (#6), rồi mới bàn giao P0-03 (#7) và pilot P0-04 (#8).
 
-1. Đọc **AGENTS.md**, **CLAUDE.md**, file này, các nguồn ở §0 và các issue P0. Xác minh HEAD hiện tại; không sửa code đang hoạt động chỉ vì muốn refactor.
-2. Triển khai **P0-01** trong nhánh/PR riêng, bổ sung tài liệu, test; in liệt kê file thay đổi, lệnh test, kết quả thực chạy.
-3. Tiếp theo **P0-02**, dùng lại scripts hiện có, test cả nhánh lỗi; **không đụng sửa các module TV2/TV3 trừ khi có bug tích hợp được tái hiện**.
-4. Bổ sung checklist bàn giao **P0-03** với trạng thái chưa xác minh trên VM bên nhận. Phần P0-04 chỉ chuẩn bị interface/pilot checklist; chưa được tự tạo dữ liệu đo.
-5. Ghi tất cả prompt và cách xác minh vào **docs/ai-prompts-verification-log.md**; tạo PR, yêu cầu TV4 review và TV1 chốt. Nếu không chạy được VM: ghi rõ thiếu công cụ/môi trường, tuyệt đối không báo PASS.
+### Claude Code — triển khai
 
-### Prompt copy cho agent
+1. Đọc **CLAUDE.md**, **AGENTS.md**, file này, #5 và các nguồn §0; audit HEAD/kiểm thử hiện tại, tránh viết lại cái đã có.
+2. Làm **P0-01** trong branch riêng, tạo PR, đính kèm file sửa, test + log/exit code, file nào chưa thể kiểm tra VM. **Chờ review của Codex**, sửa các phát hiện BLOCKER/MAJOR rồi mới bắt đầu #6 hoặc tách PR rõ ràng.
+3. Làm **P0-02** tương tự: tránh stop testbed khác, tái dùng scripts có sẵn, kiểm tra failure case, lưu evidence thật. Đừng sửa module TV2/TV3 vô cớ.
+4. Chuẩn bị hướng dẫn để TV2/TV3 tự thực hiện #7, không tự nhận họ đã chạy; #8 chỉ khi workload runner và collector thật sự sẵn sàng.
+5. Ghi **docs/ai-prompts-verification-log.md** và tạo PR để review, không tự merge.
 
-> Đọc AGENTS.md và docs/TV1_P0_UU_TIEN_BAN_GIAO_19_22_11_2026.md. Hãy làm **P0-01 trước**, rồi **P0-02** theo tiêu chí nghiệm thu, giữ nguyên các chức năng mạng đã có. Sử dụng code nguồn hiện tại làm sự thật, bổ sung contract cho TV2/TV3 và kịch bản verify bàn giao an toàn. Chạy các test khả thi, không bịa log/benchmark, ghi rõ bước nào chưa thể xác minh trên Ubuntu VM. Tạo PR với checklist, file thay đổi và bằng chứng; không tự nhận TV2/TV3 đã test thành công.
+### Codex — chỉ review
+
+1. Đọc **AGENTS.md**, file này, Issue liên quan, diff PR của Claude, phần code liên quan và các test/evidence.
+2. Kiểm tra chính xác API, mapping node/interface/link, capacity từ tc, OpenFlow path A/B (B **không phải ECMP**), firewall, Apply/Ignore/rollback, active workload guard, tính an toàn cleanup, khả năng TV2/TV3 tích hợp, source/version/log.
+3. Chạy các test **nếu môi trường cho phép**; không coi unit test macOS thay thế VM Ubuntu. Nêu rõ cái gì xác minh thật và cái gì chỉ suy luận từ source.
+4. Xuất nhận xét theo **BLOCKER/MAJOR/MINOR**, file/dòng và lý do, cách tái hiện/sửa; quyết định **APPROVE / REQUEST CHANGES / NEED VM VERIFICATION**; **không chỉnh code** hoặc tự nhận TV4/TV1 nghiệm thu.
+5. Khi Claude sửa, **review lại diff mới**; TV4/TV1 mới chốt.
+
+### Prompt gửi Claude
+
+> Bạn là **IMPLEMENTER**, không phải reviewer. Đọc CLAUDE.md, AGENTS.md và docs/TV1_P0_UU_TIEN_BAN_GIAO_19_22_11_2026.md. Làm Issue #5 (P0-01) trước trên nhánh riêng; dùng lại hạ tầng hiện có; chạy test thực sự khả thi, lưu chứng cứ và tạo PR. Sau khi Codex review, sửa theo feedback rồi mới xử lý Issue #6. Không tự merge, không tự nhận đã được nghiệm thu trên Ubuntu VM nếu chưa chạy.
+
+### Prompt gửi Codex
+
+> Bạn là **REVIEWER ĐỘC LẬP**, không phải người triển khai. Đọc AGENTS.md, kế hoạch TV1, Issue liên quan và PR/diff do Claude Code tạo. Hãy review correctness, topology/port mapping, networkctl API, A/B path, rào chắn Apply/Ignore, cleanup, backward compatibility với TV2/TV3, test/evidence; phân mức BLOCKER/MAJOR/MINOR kèm file/dòng, cách tái hiện và đề xuất sửa. Chạy test chỉ khi thực sự có môi trường. **Không sửa code, không commit, không merge và không tự đánh dấu DONE.** Kết luận APPROVE / REQUEST CHANGES / NEED VM VERIFICATION.
 
 ## 8. Phân biệt DONE và TODO
 
