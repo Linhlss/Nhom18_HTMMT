@@ -4,6 +4,16 @@
 
 **Issue theo thứ tự:** [#5 — Contract & inventory](https://github.com/Linhlss/Nhom18_HTMMT/issues/5) → [#6 — Verify/handoff](https://github.com/Linhlss/Nhom18_HTMMT/issues/6) → [#7 — TV2/TV3 tự chạy](https://github.com/Linhlss/Nhom18_HTMMT/issues/7) → [#8 — Pilot A/B chung](https://github.com/Linhlss/Nhom18_HTMMT/issues/8). **Claude nhận #5 trước; Codex review PR #5 rồi #6**, không tự đánh dấu #7–#8 DONE.
 
+## TV2–TV4 — Issues P0 nước rút (bắt đầu song song, 21/11/2026)
+
+| Người phụ trách | Issue đầu mối | Bàn giao ưu tiên |
+|---|---|---|
+| **TV2** | [#9 — Workload/Runner/Dashboard/Demo](https://github.com/Linhlss/Nhom18_HTMMT/issues/9) | Runner 1/2/4/8 flows và raw log → dashboard/UI |
+| **TV3** | [#10 — Collector/Detect/Recommend/Compare](https://github.com/Linhlss/Nhom18_HTMMT/issues/10) | Metric theo link/cửa sổ → cảnh báo, khuyến nghị, so sánh |
+| **TV4** | [#11 — QA/Report/Slides](https://github.com/Linhlss/Nhom18_HTMMT/issues/11) | QA độc lập song song → nghiệm thu E01–E10, báo cáo 2 chương |
+
+**Mốc đề xuất:** 28/11 pilot workload + collector; 05/12 nguyên mẫu end-to-end; 12/12 thí nghiệm/báo cáo/demo tối thiểu. Giữ các Issues [#7](https://github.com/Linhlss/Nhom18_HTMMT/issues/7) (tự kiểm tra VM) và [#8](https://github.com/Linhlss/Nhom18_HTMMT/issues/8) (pilot A/B) làm **điểm tích hợp chung**, không tạo nhiệm vụ trùng. Mốc phải điều chỉnh theo hạn nộp thực tế của môn học.
+
 Prototype giám sát, đánh giá cấu hình mạng Data Center Spine–Leaf cho lưu lượng AI inference giả lập, dùng Mininet/Open vSwitch trong Ubuntu VM.
 
 ## Gói hạ tầng TV1 → TV2
